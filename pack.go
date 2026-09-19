@@ -29,6 +29,14 @@ var packs = []Pack{
 	{Name: "ice", DisplayName: "冰川", Description: "冰蓝灰背景与清冷青色强调", File: "ice.css"},
 	{Name: "terminal", DisplayName: "终端", Description: "低圆角绿色系，突出日志与开发工具气质", File: "terminal.css"},
 	{Name: "cyber", DisplayName: "赛博", Description: "紫色主调配青色强调，暗色模式更鲜明", File: "cyber.css"},
+	{Name: "sage", DisplayName: "鼠尾草", Description: "低饱和草木绿，柔和安静", File: "sage.css"},
+	{Name: "peach", DisplayName: "蜜桃", Description: "柔软珊瑚橙与更圆润的界面轮廓", File: "peach.css"},
+	{Name: "denim", DisplayName: "丹宁", Description: "低饱和牛仔蓝，偏沉稳工具风格", File: "denim.css"},
+	{Name: "orchid", DisplayName: "兰花", Description: "紫粉色调，适合内容与创作类应用", File: "orchid.css"},
+	{Name: "paper", DisplayName: "纸张", Description: "暖白纸张感、低阴影与紧凑圆角", File: "paper.css"},
+	{Name: "obsidian", DisplayName: "黑曜石", Description: "近黑暗色与冷蓝强调，突出高对比工具感", File: "obsidian.css"},
+	{Name: "neon", DisplayName: "霓虹", Description: "暗色模式使用紫青高亮与更强对比", File: "neon.css"},
+	{Name: "retro", DisplayName: "复古", Description: "陶土橙配青绿强调，带复古工具气质", File: "retro.css"},
 }
 
 // Packs returns a copy of the built-in reusable pack manifest.

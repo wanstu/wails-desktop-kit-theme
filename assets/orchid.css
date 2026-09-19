@@ -1,0 +1,28 @@
+:root[data-dk-theme-pack="orchid"] {
+  --dk-bg-app: #fcf7fd;
+  --dk-bg-elevated: #ffffff;
+  --dk-bg-subtle: #f8eef9;
+  --dk-bg-muted: #f0e0f2;
+  --dk-primary: #b14eaa;
+  --dk-primary-hover: #933d8d;
+  --dk-focus-ring: rgba(177, 78, 170, .18);
+  --dk-nav-active-bg: rgba(177, 78, 170, .09);
+  --dk-nav-active-border: rgba(177, 78, 170, .21);
+  --dk-nav-active-text: #80367b;
+  --dk-nav-active-accent: #b14eaa;
+  --dk-shadow-panel: 0 11px 30px rgba(128, 54, 123, .06);
+}
+:root[data-dk-theme="dark"][data-dk-theme-pack="orchid"] {
+  --dk-bg-app: #160d17;
+  --dk-bg-elevated: #201421;
+  --dk-bg-subtle: #2a1b2c;
+  --dk-bg-muted: #362338;
+  --dk-primary: #e58cde;
+  --dk-primary-hover: #f0abea;
+  --dk-focus-ring: rgba(229, 140, 222, .24);
+  --dk-nav-active-bg: rgba(229, 140, 222, .12);
+  --dk-nav-active-border: rgba(229, 140, 222, .27);
+  --dk-nav-active-text: #f7e2f5;
+  --dk-nav-active-accent: #e58cde;
+  --dk-shadow-panel: 0 13px 34px rgba(11, 3, 12, .32);
+}
