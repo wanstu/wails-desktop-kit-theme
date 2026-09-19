@@ -21,6 +21,14 @@ var packs = []Pack{
 	{Name: "mocha", DisplayName: "摩卡", Description: "咖啡棕与暖米色，沉稳柔和", File: "mocha.css"},
 	{Name: "lavender", DisplayName: "薰衣草", Description: "浅紫柔和，并使用更圆润的界面轮廓", File: "lavender.css"},
 	{Name: "midnight", DisplayName: "午夜", Description: "深蓝靛色，高对比且偏开发工具风格", File: "midnight.css"},
+	{Name: "cobalt", DisplayName: "钴蓝", Description: "清晰强烈的蓝色工具风格", File: "cobalt.css"},
+	{Name: "jade", DisplayName: "翡翠", Description: "偏沉稳的玉石绿，圆润但不轻浮", File: "jade.css"},
+	{Name: "cherry", DisplayName: "樱桃", Description: "鲜明红粉，保持克制的层级对比", File: "cherry.css"},
+	{Name: "sand", DisplayName: "沙丘", Description: "米沙与棕褐色，低对比暖色工具感", File: "sand.css"},
+	{Name: "plum", DisplayName: "梅紫", Description: "成熟紫红色，适合偏内容型桌面应用", File: "plum.css"},
+	{Name: "ice", DisplayName: "冰川", Description: "冰蓝灰背景与清冷青色强调", File: "ice.css"},
+	{Name: "terminal", DisplayName: "终端", Description: "低圆角绿色系，突出日志与开发工具气质", File: "terminal.css"},
+	{Name: "cyber", DisplayName: "赛博", Description: "紫色主调配青色强调，暗色模式更鲜明", File: "cyber.css"},
 }
 
 // Packs returns a copy of the built-in reusable pack manifest.
