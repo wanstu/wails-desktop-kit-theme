@@ -187,3 +187,18 @@ wails-desktop-kit-theme  v0.1.x
 ~~~
 
 新增主题通常只发布 Theme，不要求 Kit 发版。
+
+## Runtime Theme Manifest
+
+新版本 Desktop Kit 支持运行时主题分发。应用不再需要把本仓库作为 Go Module 编译进 exe；Kit 会读取仓库根目录的 `manifest.json`，按需下载 CSS 并校验 SHA-256。
+
+修改或新增主题后必须重新生成 manifest：
+
+~~~powershell
+go run ./cmd/manifest
+go test ./...
+~~~
+
+`manifest.json` 与对应的 `assets/*.css` 应在同一次提交中发布。只要远程 manifest 更新，已经安装的应用即可通过 Kit 的 Theme Runtime 获取新主题，不需要重新构建应用。
+
+Go Module 的 `MountWithKit` 仍保留给需要完全离线、编译期固定主题集的应用；新的桌面应用优先使用 Kit Runtime Theme。

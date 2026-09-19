@@ -1,0 +1,202 @@
+{
+  "schema_version": 1,
+  "base_url": "https://raw.githubusercontent.com/wanstu/wails-desktop-kit-theme/master/assets/",
+  "packs": [
+    {
+      "name": "aurora",
+      "display_name": "极光",
+      "description": "蓝紫冷色，适合作为通用默认主题",
+      "file": "aurora.css",
+      "sha256": "6dfe1489380c248b37067742a9f4c86e3fa0ee4c298f971cd69c8e7b916f0bff"
+    },
+    {
+      "name": "ocean",
+      "display_name": "海洋",
+      "description": "蓝青色调，清爽明亮",
+      "file": "ocean.css",
+      "sha256": "706df374dfd29da3c58821a4df953705380f78dad552143cb36f2c0620574571"
+    },
+    {
+      "name": "forest",
+      "display_name": "森林",
+      "description": "绿色系，柔和自然",
+      "file": "forest.css",
+      "sha256": "59b0e6875aa385627ff0c79d12555be3599e1fe77c87a01e058b886741d99f24"
+    },
+    {
+      "name": "sunset",
+      "display_name": "落日",
+      "description": "橙粉暖色，更有生活感",
+      "file": "sunset.css",
+      "sha256": "59e12d9e3658c8e15228110792a1db7f16316fb028ceb44fc121d007601af746"
+    },
+    {
+      "name": "nord",
+      "display_name": "北境",
+      "description": "低饱和蓝灰，克制安静",
+      "file": "nord.css",
+      "sha256": "8853b76b5345f75470e31f44deea4d989daea79ce6606b8743e852ad4506bc01"
+    },
+    {
+      "name": "mint",
+      "display_name": "薄荷",
+      "description": "清透青绿，轻盈舒缓",
+      "file": "mint.css",
+      "sha256": "d884dee47bcfcb1c63f2d72f550ac47f5593cec61d1670571e2752faabb8cef8"
+    },
+    {
+      "name": "rose",
+      "display_name": "蔷薇",
+      "description": "柔和玫红，明快但不过分甜腻",
+      "file": "rose.css",
+      "sha256": "3d2c263885939bc3d8f16ed72d0892ecb30cbe352902af0ca8cdd0b53c961cf4"
+    },
+    {
+      "name": "amber",
+      "display_name": "琥珀",
+      "description": "金黄暖色，适合工具与生活类应用",
+      "file": "amber.css",
+      "sha256": "b1f028cca60299633a6d12c909116f4b77fd0483f146ab4fe6273c35292dab3f"
+    },
+    {
+      "name": "graphite",
+      "display_name": "石墨",
+      "description": "中性灰阶与紧凑圆角，偏专业工具感",
+      "file": "graphite.css",
+      "sha256": "fdda91d7d2bfc9ccf27604c58c33b9974f4171c73ee1c81e859673683fb06b3b"
+    },
+    {
+      "name": "mocha",
+      "display_name": "摩卡",
+      "description": "咖啡棕与暖米色，沉稳柔和",
+      "file": "mocha.css",
+      "sha256": "2ed48328a5f5e41f6af106140b33547a1a2c91b86e77abd78f64f7418cff65a8"
+    },
+    {
+      "name": "lavender",
+      "display_name": "薰衣草",
+      "description": "浅紫柔和，并使用更圆润的界面轮廓",
+      "file": "lavender.css",
+      "sha256": "1fb54de803e78728a8979ef27796f56f8421657d46ddb1e219f30d9701d90833"
+    },
+    {
+      "name": "midnight",
+      "display_name": "午夜",
+      "description": "深蓝靛色，高对比且偏开发工具风格",
+      "file": "midnight.css",
+      "sha256": "b55c79229d9b896ac2b30959afd32124cc4fb06758d0e87b26288cda2df7d9da"
+    },
+    {
+      "name": "cobalt",
+      "display_name": "钴蓝",
+      "description": "清晰强烈的蓝色工具风格",
+      "file": "cobalt.css",
+      "sha256": "925e362fd54123253310522dfb55ba0cdbd6d82a0e055d0dcff30f5e9f95d5de"
+    },
+    {
+      "name": "jade",
+      "display_name": "翡翠",
+      "description": "偏沉稳的玉石绿，圆润但不轻浮",
+      "file": "jade.css",
+      "sha256": "88c1a3e5495bef7e03f02f17f9f32d8caa1da5203d10f0d24bb3ee51954aca95"
+    },
+    {
+      "name": "cherry",
+      "display_name": "樱桃",
+      "description": "鲜明红粉，保持克制的层级对比",
+      "file": "cherry.css",
+      "sha256": "2d6753b0c421b731eb70de03bb716d156f8756408366637d41b2575c71c32ab6"
+    },
+    {
+      "name": "sand",
+      "display_name": "沙丘",
+      "description": "米沙与棕褐色，低对比暖色工具感",
+      "file": "sand.css",
+      "sha256": "523f3cab234228ab4613c5f42565d747095f63215ea90d95696831c8cb1221e7"
+    },
+    {
+      "name": "plum",
+      "display_name": "梅紫",
+      "description": "成熟紫红色，适合偏内容型桌面应用",
+      "file": "plum.css",
+      "sha256": "54262931d61d1662979af5bde8f24e39f7230c816cbb8c6fb19e586f2467fb84"
+    },
+    {
+      "name": "ice",
+      "display_name": "冰川",
+      "description": "冰蓝灰背景与清冷青色强调",
+      "file": "ice.css",
+      "sha256": "e998982f14b57a2a977baf203a6f439184e9e0aa74e5efb65d37ca13efb5bd9b"
+    },
+    {
+      "name": "terminal",
+      "display_name": "终端",
+      "description": "低圆角绿色系，突出日志与开发工具气质",
+      "file": "terminal.css",
+      "sha256": "5e0e6a47631fdf01651c3b540730de26330eb8026a9439641b9058b516fa72e7"
+    },
+    {
+      "name": "cyber",
+      "display_name": "赛博",
+      "description": "紫色主调配青色强调，暗色模式更鲜明",
+      "file": "cyber.css",
+      "sha256": "31f75935296f870c350af461f9fccf239bea652c40534d889c0038f0fd49ea95"
+    },
+    {
+      "name": "sage",
+      "display_name": "鼠尾草",
+      "description": "低饱和草木绿，柔和安静",
+      "file": "sage.css",
+      "sha256": "d39e2936db290684561caaa0466c7b44376ae8ee2051eaaa72575aa91cf7a221"
+    },
+    {
+      "name": "peach",
+      "display_name": "蜜桃",
+      "description": "柔软珊瑚橙与更圆润的界面轮廓",
+      "file": "peach.css",
+      "sha256": "98d70eda37bb01889b3f7f00352c6ffcce1af443a9efeefc63a061c3700248f9"
+    },
+    {
+      "name": "denim",
+      "display_name": "丹宁",
+      "description": "低饱和牛仔蓝，偏沉稳工具风格",
+      "file": "denim.css",
+      "sha256": "b3f598bef1029938cf8290b0d3dc277c5a955d75e673371efbc72fb4f7b01892"
+    },
+    {
+      "name": "orchid",
+      "display_name": "兰花",
+      "description": "紫粉色调，适合内容与创作类应用",
+      "file": "orchid.css",
+      "sha256": "438babb973be4103af5d09f78ae8948e46fe6241ac255dddb303a25f93af53df"
+    },
+    {
+      "name": "paper",
+      "display_name": "纸张",
+      "description": "暖白纸张感、低阴影与紧凑圆角",
+      "file": "paper.css",
+      "sha256": "06ae80aab1c093cce74256663c531a9312e7a0d3eabe614297e48f9b4f71c57f"
+    },
+    {
+      "name": "obsidian",
+      "display_name": "黑曜石",
+      "description": "近黑暗色与冷蓝强调，突出高对比工具感",
+      "file": "obsidian.css",
+      "sha256": "3081624a09f790e88ac6ec98e57f725bed4b9a09486e05554ef143261106bbcd"
+    },
+    {
+      "name": "neon",
+      "display_name": "霓虹",
+      "description": "暗色模式使用紫青高亮与更强对比",
+      "file": "neon.css",
+      "sha256": "3cf0b90648365d83e0e3b885d135905179ed545c55399afc449dd820b5cc9798"
+    },
+    {
+      "name": "retro",
+      "display_name": "复古",
+      "description": "陶土橙配青绿强调，带复古工具气质",
+      "file": "retro.css",
+      "sha256": "825fae579775ae81d5b8aa355cc108f8ca972572c7c0187a45e4db12491b924a"
+    }
+  ]
+}

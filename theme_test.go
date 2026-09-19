@@ -1,7 +1,9 @@
 package theme
 
 import (
+	"encoding/json"
 	"io/fs"
+	"os"
 	"strings"
 	"testing"
 	"testing/fstest"
@@ -75,6 +77,27 @@ func TestThemePacksOnlyOverrideDesktopKitTokens(t *testing.T) {
 				t.Fatalf("%s contains non-kit token declaration %q", pack.File, line)
 			}
 		}
+	}
+}
+
+func TestRemoteManifestIsCurrent(t *testing.T) {
+	t.Parallel()
+	want, err := BuildRemoteManifest(DefaultRemoteBaseURL)
+	if err != nil {
+		t.Fatal(err)
+	}
+	data, err := os.ReadFile("manifest.json")
+	if err != nil {
+		t.Fatal(err)
+	}
+	var got RemoteManifest
+	if err := json.Unmarshal(data, &got); err != nil {
+		t.Fatal(err)
+	}
+	gotJSON, _ := json.Marshal(got)
+	wantJSON, _ := json.Marshal(want)
+	if string(gotJSON) != string(wantJSON) {
+		t.Fatal("manifest.json is stale; run go run ./cmd/manifest")
 	}
 }
 
