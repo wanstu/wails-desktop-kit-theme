@@ -80,6 +80,14 @@ func TestThemePacksOnlyOverrideDesktopKitTokens(t *testing.T) {
 	}
 }
 
+func TestCanonicalRemoteBytesNormalizesWindowsLineEndings(t *testing.T) {
+	t.Parallel()
+	got := string(canonicalRemoteBytes([]byte("a\r\nb\rc\n")))
+	if got != "a\nb\nc\n" {
+		t.Fatalf("canonicalRemoteBytes() = %q", got)
+	}
+}
+
 func TestRemoteManifestIsCurrent(t *testing.T) {
 	t.Parallel()
 	want, err := BuildRemoteManifest(DefaultRemoteBaseURL)

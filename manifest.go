@@ -1,6 +1,7 @@
 package theme
 
 import (
+	"bytes"
 	"crypto/sha256"
 	"encoding/hex"
 	"fmt"
@@ -23,6 +24,11 @@ type RemoteManifestPack struct {
 	SHA256      string `json:"sha256"`
 }
 
+func canonicalRemoteBytes(data []byte) []byte {
+	data = bytes.ReplaceAll(data, []byte("\r\n"), []byte("\n"))
+	return bytes.ReplaceAll(data, []byte("\r"), []byte("\n"))
+}
+
 func BuildRemoteManifest(baseURL string) (RemoteManifest, error) {
 	if baseURL == "" {
 		baseURL = DefaultRemoteBaseURL
@@ -37,7 +43,7 @@ func BuildRemoteManifest(baseURL string) (RemoteManifest, error) {
 		if err != nil {
 			return RemoteManifest{}, fmt.Errorf("read %s: %w", pack.File, err)
 		}
-		sum := sha256.Sum256(data)
+		sum := sha256.Sum256(canonicalRemoteBytes(data))
 		result.Packs = append(result.Packs, RemoteManifestPack{
 			Name:        pack.Name,
 			DisplayName: pack.DisplayName,
