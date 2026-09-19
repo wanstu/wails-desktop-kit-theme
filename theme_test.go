@@ -7,20 +7,47 @@ import (
 	"testing/fstest"
 )
 
-func TestManifest(t *testing.T) {
+func TestManifestMatchesEmbeddedThemeFiles(t *testing.T) {
 	t.Parallel()
-	want := []string{"aurora", "ocean", "forest", "sunset"}
-	got := Packs()
-	if len(got) != len(want) {
-		t.Fatalf("packs = %d, want %d", len(got), len(want))
+
+	packs := Packs()
+	if len(packs) == 0 {
+		t.Fatal("expected at least one theme pack")
 	}
-	for i, name := range want {
-		if got[i].Name != name {
-			t.Fatalf("pack[%d] = %q, want %q", i, got[i].Name, name)
+
+	registered := make(map[string]bool, len(packs))
+	for _, pack := range packs {
+		if pack.Name == "" || pack.DisplayName == "" || pack.Description == "" {
+			t.Fatalf("incomplete pack metadata: %+v", pack)
 		}
-		path, ok := StylesheetPath(name)
-		if !ok || path != "/desktopkit-theme/"+name+".css" {
-			t.Fatalf("path(%q) = %q, %v", name, path, ok)
+		if pack.File != pack.Name+".css" {
+			t.Fatalf("pack %q file = %q, want %q", pack.Name, pack.File, pack.Name+".css")
+		}
+		if registered[pack.Name] {
+			t.Fatalf("duplicate pack name %q", pack.Name)
+		}
+		registered[pack.Name] = true
+
+		path, ok := StylesheetPath(pack.Name)
+		if !ok || path != "/desktopkit-theme/"+pack.File {
+			t.Fatalf("path(%q) = %q, %v", pack.Name, path, ok)
+		}
+		if _, err := fs.Stat(embedded, "assets/"+pack.File); err != nil {
+			t.Fatalf("registered pack %q missing embedded file: %v", pack.Name, err)
+		}
+	}
+
+	entries, err := fs.ReadDir(embedded, "assets")
+	if err != nil {
+		t.Fatal(err)
+	}
+	for _, entry := range entries {
+		if entry.IsDir() || !strings.HasSuffix(entry.Name(), ".css") {
+			continue
+		}
+		name := strings.TrimSuffix(entry.Name(), ".css")
+		if !registered[name] {
+			t.Fatalf("embedded theme %q is not registered in Packs()", entry.Name())
 		}
 	}
 }
@@ -62,7 +89,7 @@ func TestMountWithKitServesBothAssetNamespaces(t *testing.T) {
 		"desktopkit/tokens.css",
 		"desktopkit/theme.js",
 		"desktopkit-theme/aurora.css",
-		"desktopkit-theme/ocean.css",
+		"desktopkit-theme/midnight.css",
 	} {
 		data, err := fs.ReadFile(mounted, name)
 		if err != nil || len(data) == 0 {

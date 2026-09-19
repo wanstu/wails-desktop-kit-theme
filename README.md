@@ -58,7 +58,7 @@ import theme "github.com/wanstu/wails-desktop-kit-theme"
 /desktopkit-theme/aurora.css
 /desktopkit-theme/ocean.css
 /desktopkit-theme/forest.css
-/desktopkit-theme/sunset.css
+...
 ~~~
 
 ## HTML
@@ -96,10 +96,18 @@ dark   + forest
 
 | 稳定 ID | 显示名 | 风格 |
 | --- | --- | --- |
-| `aurora` | 极光 | 蓝紫冷色，默认推荐 |
+| `aurora` | 极光 | 蓝紫冷色，通用默认 |
 | `ocean` | 海洋 | 蓝青清爽 |
 | `forest` | 森林 | 柔和自然 |
 | `sunset` | 落日 | 橙粉暖色 |
+| `nord` | 北境 | 低饱和蓝灰 |
+| `mint` | 薄荷 | 清透青绿 |
+| `rose` | 蔷薇 | 柔和玫红 |
+| `amber` | 琥珀 | 金黄暖色 |
+| `graphite` | 石墨 | 中性灰阶、紧凑圆角 |
+| `mocha` | 摩卡 | 咖啡棕与暖米色 |
+| `lavender` | 薰衣草 | 浅紫、圆润 |
+| `midnight` | 午夜 | 深蓝靛色、高对比 |
 
 Go 侧也可以读取 manifest：
 
@@ -109,17 +117,49 @@ for _, pack := range theme.Packs() {
 }
 ~~~
 
+## Theme Gallery
+
+仓库自带真实 Kit 组件预览页，可以同时检查主题和 light / dark / system 模式：
+
+~~~powershell
+cd D:\projects\wails-desktop-kit-theme
+go run ./cmd/preview
+~~~
+
+然后打开：
+
+~~~text
+http://127.0.0.1:8080
+~~~
+
+也可以修改监听地址：
+
+~~~powershell
+go run ./cmd/preview -addr 127.0.0.1:8090
+~~~
+
+Gallery 会从 `Packs()` 自动读取主题清单，因此新增并注册 Theme Pack 后无需再维护预览页面。
+
 ## 主题贡献契约
 
 新增主题时：
 
-1. 只新增 `assets/<name>.css`。
-2. 只覆盖现有 `--dk-*` token。
-3. 同时提供 light 默认和 `:root[data-dk-theme="dark"]` 变体。
-4. 不复制 Kit 组件 CSS。
-5. 不加入具体产品名主题，例如 `frp-blue`、`adm-dark`。
+1. 新增 `assets/<name>.css`。
+2. 在 `pack.go` 中注册对应 `Pack` 元数据。
+3. 只覆盖现有 `--dk-*` token。
+4. 同时提供 light 默认和 `:root[data-dk-theme="dark"]` 变体。
+5. 不复制 Kit 组件 CSS。
+6. 不加入具体产品名主题，例如 `frp-blue`、`adm-dark`。
 
 主题需要改变圆角、阴影等时，也应通过 `--dk-radius-*`、`--dk-shadow-*` 等 token 完成。
+
+测试会同时校验：
+
+- 注册的 Pack 必须存在对应 CSS。
+- `assets/*.css` 必须全部注册。
+- Theme CSS 不允许覆盖 `.dk-*` 组件选择器。
+- Theme CSS 不允许使用 `!important`。
+- 自定义属性声明只能使用 `--dk-*`。
 
 ## 版本关系
 

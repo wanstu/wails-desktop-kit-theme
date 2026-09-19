@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="zh-CN" data-dk-theme="light" data-dk-theme-pack="aurora">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wails Desktop Kit Theme Gallery</title>
+  <link rel="stylesheet" href="/desktopkit/tokens.css">
+  <link id="kit-base" rel="stylesheet" href="/desktopkit/base.css">
+  <link rel="stylesheet" href="/desktopkit/components.css">
+  <link rel="stylesheet" href="/desktopkit/navigation.css">
+  <link rel="stylesheet" href="/preview.css">
+  <script src="/desktopkit/theme.js"></script>
+  <script defer src="/preview.js"></script>
+</head>
+<body>
+  <div class="dk-app-shell dk-sidebar-layout">
+    <aside class="dk-sidebar">
+      <div class="preview-brand">
+        <div class="preview-brand-mark">DK</div>
+        <div>
+          <strong>Theme Gallery</strong>
+          <small>真实 Kit 组件预览</small>
+        </div>
+      </div>
+
+      <nav class="dk-nav-group" aria-label="Preview sections">
+        <div class="dk-nav-group-label">预览区域</div>
+        <a class="dk-nav-link is-active" href="#overview">总览</a>
+        <a class="dk-nav-link" href="#components">组件</a>
+        <a class="dk-nav-link" href="#forms">表单</a>
+        <a class="dk-nav-link" href="#settings">设置</a>
+      </nav>
+
+      <div class="dk-nav-spacer"></div>
+      <div class="preview-sidebar-note">
+        <span class="dk-badge">wails-desktop-kit-theme</span>
+        <p>所有样式均来自 Kit token 与 Theme Pack。</p>
+      </div>
+    </aside>
+
+    <main class="dk-content preview-content">
+      <section id="overview" class="preview-header">
+        <div>
+          <span class="preview-eyebrow">WAILS DESKTOP KIT</span>
+          <h1>Theme Gallery</h1>
+          <p id="pack-description" class="dk-muted">正在加载主题...</p>
+        </div>
+      </section>
+
+      <section class="dk-panel preview-switcher" aria-label="主题快速切换">
+        <div class="preview-switcher-head">
+          <div>
+            <strong>快速切换主题</strong>
+            <span id="pack-position" class="dk-muted">1 / 12</span>
+          </div>
+
+          <div class="preview-switcher-actions">
+            <button id="prev-pack" class="dk-button dk-button-secondary preview-nav-button" type="button" title="上一个主题（←）">←</button>
+            <button id="next-pack" class="dk-button dk-button-secondary preview-nav-button" type="button" title="下一个主题（→）">→</button>
+
+            <div class="dk-tabs" id="mode-tabs" role="tablist" aria-label="明暗模式">
+              <button class="dk-tab is-active" type="button" data-mode="light">Light</button>
+              <button class="dk-tab" type="button" data-mode="dark">Dark</button>
+              <button class="dk-tab" type="button" data-mode="system">System</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="theme-picker" class="preview-theme-picker" role="listbox" aria-label="选择主题"></div>
+        <div class="preview-shortcuts dk-muted">快捷键：← / → 切换主题，L / D / S 切换 Light / Dark / System。</div>
+      </section>
+
+      <section class="preview-palette" aria-label="核心色板">
+        <div class="preview-swatch" style="--swatch: var(--dk-primary)"><span>Primary</span></div>
+        <div class="preview-swatch" style="--swatch: var(--dk-bg-app)"><span>App</span></div>
+        <div class="preview-swatch" style="--swatch: var(--dk-bg-elevated)"><span>Elevated</span></div>
+        <div class="preview-swatch" style="--swatch: var(--dk-bg-muted)"><span>Muted</span></div>
+        <div class="preview-swatch" style="--swatch: var(--dk-success)"><span>Success</span></div>
+        <div class="preview-swatch" style="--swatch: var(--dk-warning)"><span>Warning</span></div>
+        <div class="preview-swatch" style="--swatch: var(--dk-danger)"><span>Danger</span></div>
+      </section>
+
+      <div class="preview-grid">
+        <section id="components" class="dk-panel preview-span-2">
+          <div class="dk-panel-heading">
+            <div>
+              <h2>按钮与状态</h2>
+              <p>检查强调色、状态色和边框层级。</p>
+            </div>
+            <span class="dk-badge">Components</span>
+          </div>
+
+          <div class="preview-button-row">
+            <button class="dk-button dk-button-primary" type="button">主要操作</button>
+            <button class="dk-button dk-button-secondary" type="button">次要操作</button>
+            <button class="dk-button dk-button-ghost" type="button">幽灵按钮</button>
+            <button class="dk-button dk-button-danger" type="button">危险操作</button>
+            <button class="dk-button dk-button-secondary" type="button" disabled>不可用</button>
+          </div>
+
+          <div class="preview-status-row">
+            <span class="dk-status-pill">默认</span>
+            <span class="dk-status-pill is-success">运行正常</span>
+            <span class="dk-status-pill is-warning">需要注意</span>
+            <span class="dk-status-pill is-danger">执行失败</span>
+          </div>
+
+          <div class="dk-message">这是普通信息提示，用于检查正文与边框对比度。</div>
+          <div class="dk-message is-error">这是错误信息提示，用于检查危险色在当前主题下的可读性。</div>
+        </section>
+
+        <section class="dk-panel">
+          <div class="dk-panel-heading">
+            <div>
+              <h2>导航</h2>
+              <p>Active、Hover 与层级背景。</p>
+            </div>
+          </div>
+
+          <div class="dk-nav-group preview-inline-nav">
+            <a class="dk-nav-link" href="#navigation">工作空间</a>
+            <a class="dk-nav-link is-active" href="#navigation">主题管理</a>
+            <a class="dk-nav-link" href="#navigation">系统设置</a>
+          </div>
+
+          <div class="dk-tabs preview-tabs">
+            <button class="dk-tab is-active" type="button">概览</button>
+            <button class="dk-tab" type="button">配置</button>
+            <button class="dk-tab" type="button">日志</button>
+          </div>
+        </section>
+
+        <section class="dk-panel">
+          <div class="dk-panel-heading">
+            <div>
+              <h2>卡片层级</h2>
+              <p>检查背景、圆角和阴影。</p>
+            </div>
+          </div>
+
+          <div class="preview-card-stack">
+            <article class="dk-card">
+              <strong>连接状态</strong>
+              <p class="dk-muted">127.0.0.1:8001 · 已连接</p>
+            </article>
+            <article class="dk-card">
+              <strong>当前主题</strong>
+              <p id="pack-summary" class="dk-muted">Aurora</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="forms" class="dk-panel preview-span-2">
+          <div class="dk-panel-heading">
+            <div>
+              <h2>表单</h2>
+              <p>点击输入框可检查 Focus Ring。</p>
+            </div>
+          </div>
+
+          <div class="dk-form-grid">
+            <label class="dk-field">
+              名称
+              <input value="Desktop Client" aria-label="名称">
+            </label>
+            <label class="dk-field">
+              环境
+              <select aria-label="环境">
+                <option>Production</option>
+                <option>Staging</option>
+                <option>Local</option>
+              </select>
+            </label>
+            <label class="dk-field is-span-2">
+              备注
+              <textarea rows="3" aria-label="备注">Theme Gallery 使用真实 Desktop Kit 组件。</textarea>
+            </label>
+          </div>
+        </section>
+
+        <section id="settings" class="dk-panel">
+          <div class="dk-panel-heading">
+            <div>
+              <h2>设置项</h2>
+              <p>Switch 与分隔线。</p>
+            </div>
+          </div>
+
+          <div class="dk-setting-row">
+            <div>
+              <strong>开机启动</strong>
+              <small>登录系统后自动运行。</small>
+            </div>
+            <input class="dk-switch" type="checkbox" checked aria-label="开机启动">
+          </div>
+          <div class="dk-setting-row">
+            <div>
+              <strong>后台运行</strong>
+              <small>关闭窗口后保留托盘。</small>
+            </div>
+            <input class="dk-switch" type="checkbox" aria-label="后台运行">
+          </div>
+        </section>
+
+        <section class="dk-panel">
+          <div class="dk-panel-heading">
+            <div>
+              <h2>日志</h2>
+              <p>检查等宽文本与深色区域。</p>
+            </div>
+          </div>
+          <pre class="dk-log-output">[11:09:21] theme gallery ready
+[11:09:22] pack applied
+[11:09:23] desktop kit assets loaded</pre>
+        </section>
+
+        <section class="dk-panel preview-span-2">
+          <div class="dk-panel-heading">
+            <div>
+              <h2>空状态</h2>
+              <p>弱化文本和虚线边框。</p>
+            </div>
+          </div>
+          <div class="dk-empty-state">
+            <div>
+              <strong>暂无更多内容</strong>
+              <p>新增 Theme Pack 后会自动出现在主题按钮墙中。</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
