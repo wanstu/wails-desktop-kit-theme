@@ -8,7 +8,7 @@
 - 二级：从基础主题中选择 2～4 套，按顺序组合；可以移动顺序、删除和使用预设
 - 新增通用主题：`sakura`（樱花）、`hacker`（黑客）、`desert`（沙漠），当前共 31 套，其中 16 套属于重新设计的精选主题，另外 15 套为兼容主题，ID 和 CSS 均保留
 
-渐变不是另外保存成一堆组合 CSS 文件。精选主题按自然、材质或视觉风格重新设计了浅色/深色背景、卡片、文字、边框、圆角、阴影与柔和的背景光效。构建时从每套主题的 `--dk-primary` 与 `--dk-gradient-secondary` 自动生成浅/深两组渐变锚点。Kit 将组合所选主题的全部锚点，生成应用背景、侧栏、导航和主要按钮的渐变；卡片与正文保持可读。签名主题还会输出 `gradient_surfaces_light/dark`，组合时同时合成应用和卡片表面、文字、边框色，避免只呈现第一个主题的底色。旧清单没有辅助色或表面数据时仍可退化处理，保持向后兼容。
+渐变不是另外保存成一堆组合 CSS 文件。精选主题按自然、材质或视觉风格重新设计了浅色/深色背景、卡片、文字、边框、圆角、阴影与柔和的背景光效。构建时从每套主题的 `--dk-primary` 与 `--dk-gradient-secondary` 自动生成浅/深两组渐变锚点。Kit 将组合所选主题的全部锚点用于应用背景、侧栏和导航；主按钮只使用首尾两个主题的主色形成双色渐变，危险、次要等按钮不参与渐变；卡片与正文保持可读。签名主题还会输出 `gradient_surfaces_light/dark`，组合时同时合成应用和卡片表面、文字、边框色，避免只呈现第一个主题的底色。旧清单没有辅助色或表面数据时仍可退化处理，保持向后兼容。
 
 ```js
 await desktopKitTheme.applyGradient(["aurora", "sakura"]);
@@ -17,7 +17,7 @@ desktopKitTheme.apply("dark");
 desktopKitTheme.clearGradient(); // 恢复纯色
 ```
 
-已安装应用能否直接使用渐变，取决于是否接入支持 `applyGradient` 的 Kit 版本；仅更新本仓库的 manifest 不会给旧版本 Kit 自动增加新的运行时 API。兼容版本发布后，Theme Gallery 左侧默认只展示 16 套精选主题，切换「全部」仍可访问原有 31 套主题。主区域「同屏对比」提供 16 套的浅色/深色界面缩略图。
+渐变依赖 Wails Desktop Kit `v0.12.0-rc.1` 或更新的兼容版本，旧 Kit 不具备 `applyGradient` 运行时 API。Theme Gallery 左侧默认展示 16 套精选主题，切换「全部」仍可访问 31 套主题。主区域「同屏对比」提供 16 套的浅色/深色界面缩略图。
 
 
 
@@ -33,7 +33,7 @@ Theme 不重新定义 `.dk-button`、`.dk-panel`、`.dk-nav-link` 等组件，�
 
 ## 要求
 
-需要 Wails Desktop Kit **v0.3.0+**，因为 Theme Pack 使用：
+纯色 Theme Pack 的基础接口需要 Wails Desktop Kit **v0.3.0+**。**组合渐变和本版本 Theme Gallery 需要 v0.12.0-rc.1+**，因为新增 `desktopKitTheme.applyGradient()` 等 API。基础接口包括：
 
 - `data-dk-theme-pack`
 - `desktopKitTheme.setPack()`
@@ -43,8 +43,8 @@ Theme 不重新定义 `.dk-button`、`.dk-panel`、`.dk-nav-link` 等组件，�
 ## 安装
 
 ~~~powershell
-go get github.com/wanstu/wails-desktop-kit@v0.3.0
-go get github.com/wanstu/wails-desktop-kit-theme@v0.1.0
+go get github.com/wanstu/wails-desktop-kit@v0.12.0-rc.1
+go get github.com/wanstu/wails-desktop-kit-theme@v0.4.0-rc.1
 ~~~
 
 ## 挂载
