@@ -6,6 +6,7 @@ import (
 	"encoding/hex"
 	"fmt"
 	"io/fs"
+	"regexp"
 )
 
 const DefaultRemoteBaseURL = "https://raw.githubusercontent.com/wanstu/wails-desktop-kit-theme/master/assets/"
@@ -17,16 +18,28 @@ type RemoteManifest struct {
 }
 
 type RemoteManifestPack struct {
-	Name        string `json:"name"`
-	DisplayName string `json:"display_name"`
-	Description string `json:"description"`
-	File        string `json:"file"`
-	SHA256      string `json:"sha256"`
+	Name          string `json:"name"`
+	DisplayName   string `json:"display_name"`
+	Description   string `json:"description"`
+	File          string `json:"file"`
+	SHA256        string `json:"sha256"`
+	GradientLight string `json:"gradient_light,omitempty"`
+	GradientDark  string `json:"gradient_dark,omitempty"`
 }
 
 func canonicalRemoteBytes(data []byte) []byte {
 	data = bytes.ReplaceAll(data, []byte("\r\n"), []byte("\n"))
 	return bytes.ReplaceAll(data, []byte("\r"), []byte("\n"))
+}
+
+var primaryColorPattern = regexp.MustCompile(`--dk-primary\s*:\s*(#[0-9a-fA-F]{6})\s*;`)
+
+func gradientColors(data []byte) (string, string, error) {
+	matches := primaryColorPattern.FindAllSubmatch(data, -1)
+	if len(matches) < 2 {
+		return "", "", fmt.Errorf("theme stylesheet must define --dk-primary in light and dark variants")
+	}
+	return string(matches[0][1]), string(matches[1][1]), nil
 }
 
 func BuildRemoteManifest(baseURL string) (RemoteManifest, error) {
@@ -43,13 +56,19 @@ func BuildRemoteManifest(baseURL string) (RemoteManifest, error) {
 		if err != nil {
 			return RemoteManifest{}, fmt.Errorf("read %s: %w", pack.File, err)
 		}
+		light, dark, err := gradientColors(data)
+		if err != nil {
+			return RemoteManifest{}, fmt.Errorf("%s: %w", pack.File, err)
+		}
 		sum := sha256.Sum256(canonicalRemoteBytes(data))
 		result.Packs = append(result.Packs, RemoteManifestPack{
-			Name:        pack.Name,
-			DisplayName: pack.DisplayName,
-			Description: pack.Description,
-			File:        pack.File,
-			SHA256:      hex.EncodeToString(sum[:]),
+			Name:          pack.Name,
+			DisplayName:   pack.DisplayName,
+			Description:   pack.Description,
+			File:          pack.File,
+			SHA256:        hex.EncodeToString(sum[:]),
+			GradientLight: light,
+			GradientDark:  dark,
 		})
 	}
 	return result, nil

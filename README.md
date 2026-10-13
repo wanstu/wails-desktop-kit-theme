@@ -1,5 +1,26 @@
 # Wails Desktop Kit Theme
 
+## 组合渐变主题
+
+在现有纯色 Theme Pack 之上，新增二级选择方式：
+
+- 一级：`纯色 / 渐变`
+- 二级：从基础主题中选择 2～4 套，按顺序组合；可以移动顺序、删除和使用预设
+- 新增通用主题：`sakura`（樱花）、`hacker`（黑客）、`desert`（沙漠），当前共 31 套
+
+渐变不是另外保存成一堆组合 CSS 文件。构建时从每套主题的 light/dark `--dk-primary` 生成 manifest 的 `gradient_light`、`gradient_dark` 两个字段。Kit 会自动生成柔和的背景、侧栏、导航和主按钮渐变，内容区保持正常可读。
+
+```js
+await desktopKitTheme.applyGradient(["aurora", "sakura"]);
+await desktopKitTheme.applyGradient(["sakura", "hacker", "desert"]);
+desktopKitTheme.apply("dark");
+desktopKitTheme.clearGradient(); // 恢复纯色
+```
+
+已安装应用能否直接使用渐变，取决于是否接入支持 `applyGradient` 的 Kit 版本；仅更新本仓库的 manifest 不会给旧版本 Kit 自动增加新的运行时 API。兼容版本发布后，Theme Gallery 的左侧工具栏可直接预览组合效果。
+
+
+
 `wails-desktop-kit-theme` 是 [Wails Desktop Kit](https://github.com/wanstu/wails-desktop-kit) 的可选通用主题包仓库。
 
 边界保持简单：

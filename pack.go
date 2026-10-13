@@ -10,6 +10,9 @@ type Pack struct {
 
 var packs = []Pack{
 	{Name: "aurora", DisplayName: "极光", Description: "蓝紫冷色，适合作为通用默认主题", File: "aurora.css"},
+	{Name: "sakura", DisplayName: "樱花", Description: "樱粉暖白，柔和的春日色调", File: "sakura.css"},
+	{Name: "hacker", DisplayName: "黑客", Description: "终端荧光绿，深色模式更鲜明", File: "hacker.css"},
+	{Name: "desert", DisplayName: "沙漠", Description: "金棕沙色，温暖而有层次", File: "desert.css"},
 	{Name: "ocean", DisplayName: "海洋", Description: "蓝青色调，清爽明亮", File: "ocean.css"},
 	{Name: "forest", DisplayName: "森林", Description: "绿色系，柔和自然", File: "forest.css"},
 	{Name: "sunset", DisplayName: "落日", Description: "橙粉暖色，更有生活感", File: "sunset.css"},

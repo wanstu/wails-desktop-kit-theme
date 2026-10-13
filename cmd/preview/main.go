@@ -19,6 +19,8 @@ type packView struct {
 	DisplayName    string `json:"displayName"`
 	Description    string `json:"description"`
 	StylesheetPath string `json:"stylesheetPath"`
+	GradientLight  string `json:"gradientLight"`
+	GradientDark   string `json:"gradientDark"`
 }
 
 func main() {
@@ -33,6 +35,15 @@ func main() {
 	mux := http.NewServeMux()
 	mux.HandleFunc("GET /api/packs", func(w http.ResponseWriter, _ *http.Request) {
 		packs := theme.Packs()
+		manifest, err := theme.BuildRemoteManifest("")
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+			return
+		}
+		colors := make(map[string]theme.RemoteManifestPack)
+		for _, item := range manifest.Packs {
+			colors[item.Name] = item
+		}
 		result := make([]packView, 0, len(packs))
 		for _, pack := range packs {
 			path, _ := theme.StylesheetPath(pack.Name)
@@ -41,6 +52,8 @@ func main() {
 				DisplayName:    pack.DisplayName,
 				Description:    pack.Description,
 				StylesheetPath: path,
+				GradientLight:  colors[pack.Name].GradientLight,
+				GradientDark:   colors[pack.Name].GradientDark,
 			})
 		}
 		w.Header().Set("Content-Type", "application/json; charset=utf-8")
@@ -50,6 +63,16 @@ func main() {
 		}
 	})
 
+	mux.HandleFunc("GET /desktopkit-theme/manifest.json", func(w http.ResponseWriter, _ *http.Request) {
+		manifest, err := theme.BuildRemoteManifest("")
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+			return
+		}
+		w.Header().Set("Content-Type", "application/json; charset=utf-8")
+		w.Header().Set("Cache-Control", "no-store")
+		_ = json.NewEncoder(w).Encode(manifest)
+	})
 	mux.Handle("/", http.FileServer(http.FS(theme.MountWithKit(app))))
 
 	log.Printf("Theme Gallery: http://%s", *addr)
