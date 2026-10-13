@@ -483,11 +483,15 @@ html {
   .preview-tool-sidebar {
     position: static;
     height: auto;
-    max-height: 58vh;
+    max-height: none;
+    overflow: visible;
   }
 
   .preview-theme-picker {
-    max-height: 36vh;
+    flex: 0 1 auto;
+    max-height: min(36vh, 260px);
+    min-height: 140px;
+    overflow-y: auto;
   }
 
   .preview-grid {

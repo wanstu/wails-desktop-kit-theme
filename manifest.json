@@ -12,7 +12,25 @@
       "gradient_dark": "#62DBBC",
       "gradient_light_secondary": "#15A6A0",
       "gradient_dark_secondary": "#B987F5",
-      "signature": true
+      "signature": true,
+      "gradient_surfaces_light": {
+        "app": "#F0F8FC",
+        "elevated": "#FFFFFF",
+        "subtle": "#E8F1FA",
+        "muted": "#DDE8F4",
+        "text": "#193454",
+        "text_secondary": "#4D6683",
+        "border": "#BDD3E4"
+      },
+      "gradient_surfaces_dark": {
+        "app": "#080F23",
+        "elevated": "#111A33",
+        "subtle": "#192644",
+        "muted": "#253657",
+        "text": "#EBF4FF",
+        "text_secondary": "#AABEDC",
+        "border": "#354A68"
+      }
     },
     {
       "name": "sakura",
@@ -24,7 +42,25 @@
       "gradient_dark": "#FFAACD",
       "gradient_light_secondary": "#EEA3C3",
       "gradient_dark_secondary": "#F2C9E0",
-      "signature": true
+      "signature": true,
+      "gradient_surfaces_light": {
+        "app": "#FFF9FB",
+        "elevated": "#FFFFFF",
+        "subtle": "#FFF0F5",
+        "muted": "#FFE7EF",
+        "text": "#51263D",
+        "text_secondary": "#946679",
+        "border": "#F3CBD9"
+      },
+      "gradient_surfaces_dark": {
+        "app": "#1D111C",
+        "elevated": "#291927",
+        "subtle": "#352134",
+        "muted": "#462B43",
+        "text": "#FFF0F7",
+        "text_secondary": "#D8A6BF",
+        "border": "#64415B"
+      }
     },
     {
       "name": "hacker",
@@ -36,7 +72,25 @@
       "gradient_dark": "#48E77A",
       "gradient_light_secondary": "#65AC70",
       "gradient_dark_secondary": "#18A94D",
-      "signature": true
+      "signature": true,
+      "gradient_surfaces_light": {
+        "app": "#EFF5F0",
+        "elevated": "#FBFDFB",
+        "subtle": "#E4EFE5",
+        "muted": "#D5E5D7",
+        "text": "#182F23",
+        "text_secondary": "#3D6750",
+        "border": "#A3C3AB"
+      },
+      "gradient_surfaces_dark": {
+        "app": "#040C07",
+        "elevated": "#09160D",
+        "subtle": "#102415",
+        "muted": "#18341E",
+        "text": "#D8F8DA",
+        "text_secondary": "#8ED49B",
+        "border": "#2C5733"
+      }
     },
     {
       "name": "desert",
@@ -48,7 +102,25 @@
       "gradient_dark": "#ECAA61",
       "gradient_light_secondary": "#E0A858",
       "gradient_dark_secondary": "#E0C184",
-      "signature": true
+      "signature": true,
+      "gradient_surfaces_light": {
+        "app": "#FBF1DD",
+        "elevated": "#FFF9EA",
+        "subtle": "#F3E3C7",
+        "muted": "#EAD2AC",
+        "text": "#543620",
+        "text_secondary": "#8A644A",
+        "border": "#D6B88D"
+      },
+      "gradient_surfaces_dark": {
+        "app": "#1B120E",
+        "elevated": "#291A13",
+        "subtle": "#39251A",
+        "muted": "#4D3221",
+        "text": "#FFECD2",
+        "text_secondary": "#CCA883",
+        "border": "#68482E"
+      }
     },
     {
       "name": "ocean",
@@ -60,7 +132,25 @@
       "gradient_dark": "#49C9E9",
       "gradient_light_secondary": "#22B9C6",
       "gradient_dark_secondary": "#5EE1C4",
-      "signature": true
+      "signature": true,
+      "gradient_surfaces_light": {
+        "app": "#E9F7FC",
+        "elevated": "#FFFFFF",
+        "subtle": "#DFF1F8",
+        "muted": "#CDE6F2",
+        "text": "#0C354D",
+        "text_secondary": "#46718A",
+        "border": "#ADD3E3"
+      },
+      "gradient_surfaces_dark": {
+        "app": "#041727",
+        "elevated": "#08263C",
+        "subtle": "#10354D",
+        "muted": "#19485D",
+        "text": "#E0F6FC",
+        "text_secondary": "#92C2D3",
+        "border": "#285568"
+      }
     },
     {
       "name": "forest",
@@ -72,7 +162,25 @@
       "gradient_dark": "#B8D382",
       "gradient_light_secondary": "#A1B957",
       "gradient_dark_secondary": "#D4B577",
-      "signature": true
+      "signature": true,
+      "gradient_surfaces_light": {
+        "app": "#F2F5E9",
+        "elevated": "#FCFDF5",
+        "subtle": "#EAF0DB",
+        "muted": "#DAE5C9",
+        "text": "#263C28",
+        "text_secondary": "#657A56",
+        "border": "#B7CAA6"
+      },
+      "gradient_surfaces_dark": {
+        "app": "#101A11",
+        "elevated": "#1A291B",
+        "subtle": "#243728",
+        "muted": "#304735",
+        "text": "#EBF0D5",
+        "text_secondary": "#BCCDA3",
+        "border": "#456148"
+      }
     },
     {
       "name": "sunset",
@@ -84,7 +192,25 @@
       "gradient_dark": "#FCAD6C",
       "gradient_light_secondary": "#DF7BA3",
       "gradient_dark_secondary": "#F49DD2",
-      "signature": true
+      "signature": true,
+      "gradient_surfaces_light": {
+        "app": "#FFF1E8",
+        "elevated": "#FFF8F2",
+        "subtle": "#FFE0D8",
+        "muted": "#FAD0D1",
+        "text": "#572C39",
+        "text_secondary": "#925D60",
+        "border": "#EDB5AB"
+      },
+      "gradient_surfaces_dark": {
+        "app": "#25111F",
+        "elevated": "#341A29",
+        "subtle": "#42243A",
+        "muted": "#583348",
+        "text": "#FFE6DA",
+        "text_secondary": "#E9A7A7",
+        "border": "#71435B"
+      }
     },
     {
       "name": "nord",
@@ -96,7 +222,25 @@
       "gradient_dark": "#A6CCD9",
       "gradient_light_secondary": "#9DC7D6",
       "gradient_dark_secondary": "#D1E9EC",
-      "signature": true
+      "signature": true,
+      "gradient_surfaces_light": {
+        "app": "#EAF0F4",
+        "elevated": "#FBFDFE",
+        "subtle": "#E2EAEF",
+        "muted": "#D3DFE7",
+        "text": "#263F54",
+        "text_secondary": "#5D7889",
+        "border": "#BDD0DD"
+      },
+      "gradient_surfaces_dark": {
+        "app": "#121C27",
+        "elevated": "#1C2A36",
+        "subtle": "#263846",
+        "muted": "#314858",
+        "text": "#E6F0F5",
+        "text_secondary": "#ADC4D1",
+        "border": "#496071"
+      }
     },
     {
       "name": "mint",
@@ -135,7 +279,25 @@
       "gradient_dark": "#C4CDD7",
       "gradient_light_secondary": "#99A3AE",
       "gradient_dark_secondary": "#8694A4",
-      "signature": true
+      "signature": true,
+      "gradient_surfaces_light": {
+        "app": "#F1F3F5",
+        "elevated": "#FCFCFD",
+        "subtle": "#E8EBEE",
+        "muted": "#DADEE3",
+        "text": "#242C34",
+        "text_secondary": "#68727D",
+        "border": "#C6CBD1"
+      },
+      "gradient_surfaces_dark": {
+        "app": "#0E1115",
+        "elevated": "#171C22",
+        "subtle": "#202832",
+        "muted": "#303A46",
+        "text": "#EBEFF2",
+        "text_secondary": "#A5B1BC",
+        "border": "#44505E"
+      }
     },
     {
       "name": "mocha",
@@ -156,7 +318,25 @@
       "gradient_dark": "#D5B3F6",
       "gradient_light_secondary": "#C4A5E8",
       "gradient_dark_secondary": "#9B78C9",
-      "signature": true
+      "signature": true,
+      "gradient_surfaces_light": {
+        "app": "#FAF6FF",
+        "elevated": "#FFFDFF",
+        "subtle": "#F4EAFC",
+        "muted": "#E9D9F7",
+        "text": "#402F5E",
+        "text_secondary": "#785D95",
+        "border": "#DAC5EC"
+      },
+      "gradient_surfaces_dark": {
+        "app": "#1B1228",
+        "elevated": "#291C3A",
+        "subtle": "#352448",
+        "muted": "#473258",
+        "text": "#F5ECFF",
+        "text_secondary": "#BEA7D6",
+        "border": "#5A4671"
+      }
     },
     {
       "name": "midnight",
@@ -168,7 +348,25 @@
       "gradient_dark": "#8AB9FF",
       "gradient_light_secondary": "#7C99CE",
       "gradient_dark_secondary": "#436BAF",
-      "signature": true
+      "signature": true,
+      "gradient_surfaces_light": {
+        "app": "#EDF2FB",
+        "elevated": "#FEFFFF",
+        "subtle": "#E0E9F8",
+        "muted": "#CADAF0",
+        "text": "#182E54",
+        "text_secondary": "#596E91",
+        "border": "#B1C4E2"
+      },
+      "gradient_surfaces_dark": {
+        "app": "#050A18",
+        "elevated": "#0B1325",
+        "subtle": "#121D34",
+        "muted": "#1C2B48",
+        "text": "#E5EDFF",
+        "text_secondary": "#9DB6D8",
+        "border": "#2D4467"
+      }
     },
     {
       "name": "cobalt",
@@ -189,7 +387,25 @@
       "gradient_dark": "#8BD6BF",
       "gradient_light_secondary": "#89C5AA",
       "gradient_dark_secondary": "#4E9D82",
-      "signature": true
+      "signature": true,
+      "gradient_surfaces_light": {
+        "app": "#EDF7F2",
+        "elevated": "#FCFFFC",
+        "subtle": "#E3F1E9",
+        "muted": "#D2E6DB",
+        "text": "#153E32",
+        "text_secondary": "#507E6C",
+        "border": "#B2D5C5"
+      },
+      "gradient_surfaces_dark": {
+        "app": "#091D19",
+        "elevated": "#122D26",
+        "subtle": "#1E3A30",
+        "muted": "#294A3C",
+        "text": "#E1F6ED",
+        "text_secondary": "#9FCBBB",
+        "border": "#3C6555"
+      }
     },
     {
       "name": "cherry",
@@ -201,7 +417,25 @@
       "gradient_dark": "#FC708B",
       "gradient_light_secondary": "#E9788D",
       "gradient_dark_secondary": "#D63368",
-      "signature": true
+      "signature": true,
+      "gradient_surfaces_light": {
+        "app": "#FFF5F4",
+        "elevated": "#FFFDFB",
+        "subtle": "#FCE7E8",
+        "muted": "#F5CDD2",
+        "text": "#4A1D29",
+        "text_secondary": "#92515E",
+        "border": "#E5B1B9"
+      },
+      "gradient_surfaces_dark": {
+        "app": "#230C1A",
+        "elevated": "#301121",
+        "subtle": "#411A2C",
+        "muted": "#55233C",
+        "text": "#FFE7EC",
+        "text_secondary": "#EAB0BE",
+        "border": "#74354D"
+      }
     },
     {
       "name": "sand",
@@ -249,7 +483,25 @@
       "gradient_dark": "#B78BFF",
       "gradient_light_secondary": "#07ABBA",
       "gradient_dark_secondary": "#47EDD5",
-      "signature": true
+      "signature": true,
+      "gradient_surfaces_light": {
+        "app": "#F1F1FF",
+        "elevated": "#FCFCFF",
+        "subtle": "#E8E7FF",
+        "muted": "#D9D5FD",
+        "text": "#24245A",
+        "text_secondary": "#5658A4",
+        "border": "#B8B5EE"
+      },
+      "gradient_surfaces_dark": {
+        "app": "#070514",
+        "elevated": "#100B26",
+        "subtle": "#1D143B",
+        "muted": "#302052",
+        "text": "#F4ECFF",
+        "text_secondary": "#C5B1E9",
+        "border": "#4B3580"
+      }
     },
     {
       "name": "sage",
@@ -297,7 +549,25 @@
       "gradient_dark": "#DDC6A2",
       "gradient_light_secondary": "#B09C77",
       "gradient_dark_secondary": "#937F62",
-      "signature": true
+      "signature": true,
+      "gradient_surfaces_light": {
+        "app": "#F5F0E5",
+        "elevated": "#FEF9EE",
+        "subtle": "#EAE3D4",
+        "muted": "#DDD1BB",
+        "text": "#3E3429",
+        "text_secondary": "#75654F",
+        "border": "#CBBCA4"
+      },
+      "gradient_surfaces_dark": {
+        "app": "#1A1713",
+        "elevated": "#262118",
+        "subtle": "#30291F",
+        "muted": "#403728",
+        "text": "#F0E3D0",
+        "text_secondary": "#BEAD96",
+        "border": "#594B3A"
+      }
     },
     {
       "name": "obsidian",
@@ -327,7 +597,25 @@
       "gradient_dark": "#F1A278",
       "gradient_light_secondary": "#3B8680",
       "gradient_dark_secondary": "#7EC3AE",
-      "signature": true
+      "signature": true,
+      "gradient_surfaces_light": {
+        "app": "#F8ECD5",
+        "elevated": "#FFF4E1",
+        "subtle": "#EFDCC1",
+        "muted": "#E3CAAD",
+        "text": "#422F2A",
+        "text_secondary": "#836657",
+        "border": "#C8A98B"
+      },
+      "gradient_surfaces_dark": {
+        "app": "#211A16",
+        "elevated": "#32241D",
+        "subtle": "#403027",
+        "muted": "#523B2F",
+        "text": "#FFF0D9",
+        "text_secondary": "#E1B79C",
+        "border": "#765442"
+      }
     }
   ]
 }

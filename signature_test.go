@@ -60,6 +60,9 @@ func TestSignatureThemesHaveFullPaletteAndContrast(t *testing.T) {
 			continue
 		}
 		signatureCount++
+		if pack.GradientSurfacesLight == nil || pack.GradientSurfacesDark == nil {
+			t.Errorf("%s missing surface composition metadata", pack.Name)
+		}
 		if pack.GradientLightSecondary == "" || pack.GradientDarkSecondary == "" {
 			t.Errorf("%s missing secondary gradient colors", pack.Name)
 		}
