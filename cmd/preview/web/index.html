@@ -13,8 +13,8 @@
   <script defer src="/preview.js"></script>
 </head>
 <body>
-  <div class="dk-app-shell dk-sidebar-layout">
-    <aside class="dk-sidebar">
+  <div class="dk-app-shell dk-sidebar-layout preview-shell">
+    <aside class="dk-sidebar preview-tool-sidebar" aria-label="Theme Gallery 工具栏">
       <div class="preview-brand">
         <div class="preview-brand-mark">DK</div>
         <div>
@@ -23,18 +23,48 @@
         </div>
       </div>
 
-      <nav class="dk-nav-group" aria-label="Preview sections">
-        <div class="dk-nav-group-label">预览区域</div>
-        <a class="dk-nav-link is-active" href="#overview">总览</a>
-        <a class="dk-nav-link" href="#components">组件</a>
-        <a class="dk-nav-link" href="#forms">表单</a>
-        <a class="dk-nav-link" href="#settings">设置</a>
-      </nav>
+      <div class="preview-sidebar-heading">
+        <div>
+          <strong>选择主题</strong>
+          <span id="pack-position">1 / 31</span>
+        </div>
+        <div class="preview-pack-nav">
+          <button id="prev-pack" class="dk-button dk-button-secondary preview-nav-button" type="button" title="上一个主题（←）">←</button>
+          <button id="next-pack" class="dk-button dk-button-secondary preview-nav-button" type="button" title="下一个主题（→）">→</button>
+        </div>
+      </div>
 
-      <div class="dk-nav-spacer"></div>
-      <div class="preview-sidebar-note">
-        <span class="dk-badge">wails-desktop-kit-theme</span>
-        <p>所有样式均来自 Kit token 与 Theme Pack。</p>
+      <div class="dk-tabs preview-mode-tabs" id="mode-tabs" role="tablist" aria-label="明暗模式">
+        <button class="dk-tab is-active" type="button" data-mode="light">Light</button>
+        <button class="dk-tab" type="button" data-mode="dark">Dark</button>
+        <button class="dk-tab" type="button" data-mode="system">System</button>
+      </div>
+
+      <div class="preview-theme-style">
+        <strong>主题风格</strong>
+        <div id="style-tabs" class="dk-tabs" role="tablist" aria-label="主题风格">
+          <button type="button" class="dk-tab is-active" data-style="solid">纯色</button>
+          <button type="button" class="dk-tab" data-style="gradient">渐变</button>
+        </div>
+      </div>
+      <div id="gradient-builder" class="preview-gradient-builder" hidden>
+        <div class="preview-gradient-heading"><strong>渐变组合</strong><span>选择 2～4 个主题</span></div>
+        <div id="gradient-order" class="preview-gradient-order"></div>
+        <div class="preview-gradient-presets">
+          <button type="button" data-gradient-preset="aurora,sakura">极光 × 樱花</button>
+          <button type="button" data-gradient-preset="sakura,hacker,desert">樱花 × 黑客 × 沙漠</button>
+          <button type="button" data-gradient-preset="ocean,forest">海洋 × 森林</button>
+        </div>
+        <small id="gradient-message" aria-live="polite">点击下方主题加入组合。</small>
+      </div>
+      <div class="preview-visibility" role="group" aria-label="主题范围">
+        <button id="show-signature" type="button" class="is-active">精选 16</button>
+        <button id="show-all" type="button">全部 31</button>
+      </div>
+      <div id="theme-picker" class="preview-theme-picker" role="listbox" aria-label="选择主题"></div>
+
+      <div class="preview-sidebar-footer">
+        <small>L / D / S 切模式 · 可组合渐变主题</small>
       </div>
     </aside>
 
@@ -47,29 +77,6 @@
         </div>
       </section>
 
-      <section class="dk-panel preview-switcher" aria-label="主题快速切换">
-        <div class="preview-switcher-head">
-          <div>
-            <strong>快速切换主题</strong>
-            <span id="pack-position" class="dk-muted">1 / 12</span>
-          </div>
-
-          <div class="preview-switcher-actions">
-            <button id="prev-pack" class="dk-button dk-button-secondary preview-nav-button" type="button" title="上一个主题（←）">←</button>
-            <button id="next-pack" class="dk-button dk-button-secondary preview-nav-button" type="button" title="下一个主题（→）">→</button>
-
-            <div class="dk-tabs" id="mode-tabs" role="tablist" aria-label="明暗模式">
-              <button class="dk-tab is-active" type="button" data-mode="light">Light</button>
-              <button class="dk-tab" type="button" data-mode="dark">Dark</button>
-              <button class="dk-tab" type="button" data-mode="system">System</button>
-            </div>
-          </div>
-        </div>
-
-        <div id="theme-picker" class="preview-theme-picker" role="listbox" aria-label="选择主题"></div>
-        <div class="preview-shortcuts dk-muted">快捷键：← / → 切换主题，L / D / S 切换 Light / Dark / System。</div>
-      </section>
-
       <section class="preview-palette" aria-label="核心色板">
         <div class="preview-swatch" style="--swatch: var(--dk-primary)"><span>Primary</span></div>
         <div class="preview-swatch" style="--swatch: var(--dk-bg-app)"><span>App</span></div>
@@ -79,6 +86,12 @@
         <div class="preview-swatch" style="--swatch: var(--dk-warning)"><span>Warning</span></div>
         <div class="preview-swatch" style="--swatch: var(--dk-danger)"><span>Danger</span></div>
       </section>
+
+      <details id="compare" class="preview-compare">
+        <summary>同屏对比 · 16 套精选主题（浅色 / 深色）</summary>
+        <p>每套主题使用相同卡片、按钮和导航进行对比。点击任意主题可切换到完整预览。</p>
+        <div id="theme-compare-grid" class="preview-compare-grid"></div>
+      </details>
 
       <div class="preview-grid">
         <section id="components" class="dk-panel preview-span-2">
@@ -224,7 +237,7 @@
           <div class="dk-empty-state">
             <div>
               <strong>暂无更多内容</strong>
-              <p>新增 Theme Pack 后会自动出现在主题按钮墙中。</p>
+              <p>左侧可以随时切换主题，不占用主预览区域。</p>
             </div>
           </div>
         </section>

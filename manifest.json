@@ -5,198 +5,617 @@
     {
       "name": "aurora",
       "display_name": "极光",
-      "description": "蓝紫冷色，适合作为通用默认主题",
+      "description": "极夜深蓝底色，青绿与紫罗兰多层光晕",
       "file": "aurora.css",
-      "sha256": "6dfe1489380c248b37067742a9f4c86e3fa0ee4c298f971cd69c8e7b916f0bff"
+      "sha256": "ab55f3259052b6d46ed31cbd3dbbc8bd62d44bc04e7abbf43d18ae789098c3e3",
+      "gradient_light": "#5058C9",
+      "gradient_dark": "#62DBBC",
+      "gradient_light_secondary": "#15A6A0",
+      "gradient_dark_secondary": "#B987F5",
+      "signature": true,
+      "gradient_surfaces_light": {
+        "app": "#F0F8FC",
+        "elevated": "#FFFFFF",
+        "subtle": "#E8F1FA",
+        "muted": "#DDE8F4",
+        "text": "#193454",
+        "text_secondary": "#4D6683",
+        "border": "#BDD3E4"
+      },
+      "gradient_surfaces_dark": {
+        "app": "#080F23",
+        "elevated": "#111A33",
+        "subtle": "#192644",
+        "muted": "#253657",
+        "text": "#EBF4FF",
+        "text_secondary": "#AABEDC",
+        "border": "#354A68"
+      }
+    },
+    {
+      "name": "sakura",
+      "display_name": "樱花",
+      "description": "瓷白和浅樱粉，柔和花瓣色与大圆角",
+      "file": "sakura.css",
+      "sha256": "bbf1693a846ac7965e3216fab5a231d2b8d321767ef6f179d81ede51eebb1e79",
+      "gradient_light": "#BE326F",
+      "gradient_dark": "#FFAACD",
+      "gradient_light_secondary": "#EEA3C3",
+      "gradient_dark_secondary": "#F2C9E0",
+      "signature": true,
+      "gradient_surfaces_light": {
+        "app": "#FFF9FB",
+        "elevated": "#FFFFFF",
+        "subtle": "#FFF0F5",
+        "muted": "#FFE7EF",
+        "text": "#51263D",
+        "text_secondary": "#946679",
+        "border": "#F3CBD9"
+      },
+      "gradient_surfaces_dark": {
+        "app": "#1D111C",
+        "elevated": "#291927",
+        "subtle": "#352134",
+        "muted": "#462B43",
+        "text": "#FFF0F7",
+        "text_secondary": "#D8A6BF",
+        "border": "#64415B"
+      }
+    },
+    {
+      "name": "hacker",
+      "display_name": "黑客",
+      "description": "近黑终端底色、荧光绿与硬边框",
+      "file": "hacker.css",
+      "sha256": "0e0650cfa31ea4a7013d0593e4a81a900dbd698709ec486c394718db4903c696",
+      "gradient_light": "#146B3B",
+      "gradient_dark": "#48E77A",
+      "gradient_light_secondary": "#65AC70",
+      "gradient_dark_secondary": "#18A94D",
+      "signature": true,
+      "gradient_surfaces_light": {
+        "app": "#EFF5F0",
+        "elevated": "#FBFDFB",
+        "subtle": "#E4EFE5",
+        "muted": "#D5E5D7",
+        "text": "#182F23",
+        "text_secondary": "#3D6750",
+        "border": "#A3C3AB"
+      },
+      "gradient_surfaces_dark": {
+        "app": "#040C07",
+        "elevated": "#09160D",
+        "subtle": "#102415",
+        "muted": "#18341E",
+        "text": "#D8F8DA",
+        "text_secondary": "#8ED49B",
+        "border": "#2C5733"
+      }
+    },
+    {
+      "name": "desert",
+      "display_name": "沙漠",
+      "description": "沙金与赭石，沙漠夕照的暖色层次",
+      "file": "desert.css",
+      "sha256": "3e0decd10a26e9317f3951e0388324fdf661aab9be00155e6c19078b4b76efe0",
+      "gradient_light": "#A35130",
+      "gradient_dark": "#ECAA61",
+      "gradient_light_secondary": "#E0A858",
+      "gradient_dark_secondary": "#E0C184",
+      "signature": true,
+      "gradient_surfaces_light": {
+        "app": "#FBF1DD",
+        "elevated": "#FFF9EA",
+        "subtle": "#F3E3C7",
+        "muted": "#EAD2AC",
+        "text": "#543620",
+        "text_secondary": "#8A644A",
+        "border": "#D6B88D"
+      },
+      "gradient_surfaces_dark": {
+        "app": "#1B120E",
+        "elevated": "#291A13",
+        "subtle": "#39251A",
+        "muted": "#4D3221",
+        "text": "#FFECD2",
+        "text_secondary": "#CCA883",
+        "border": "#68482E"
+      }
     },
     {
       "name": "ocean",
       "display_name": "海洋",
-      "description": "蓝青色调，清爽明亮",
+      "description": "海沟深蓝与浅海青绿，通透水色",
       "file": "ocean.css",
-      "sha256": "706df374dfd29da3c58821a4df953705380f78dad552143cb36f2c0620574571"
+      "sha256": "a47dc7e0573041a0c150d2702b7be590e1c8a06fd9049b7491781ee6b2c8c532",
+      "gradient_light": "#006A91",
+      "gradient_dark": "#49C9E9",
+      "gradient_light_secondary": "#22B9C6",
+      "gradient_dark_secondary": "#5EE1C4",
+      "signature": true,
+      "gradient_surfaces_light": {
+        "app": "#E9F7FC",
+        "elevated": "#FFFFFF",
+        "subtle": "#DFF1F8",
+        "muted": "#CDE6F2",
+        "text": "#0C354D",
+        "text_secondary": "#46718A",
+        "border": "#ADD3E3"
+      },
+      "gradient_surfaces_dark": {
+        "app": "#041727",
+        "elevated": "#08263C",
+        "subtle": "#10354D",
+        "muted": "#19485D",
+        "text": "#E0F6FC",
+        "text_secondary": "#92C2D3",
+        "border": "#285568"
+      }
     },
     {
       "name": "forest",
       "display_name": "森林",
-      "description": "绿色系，柔和自然",
+      "description": "苔绿、林木灰绿和柔和自然边界",
       "file": "forest.css",
-      "sha256": "59b0e6875aa385627ff0c79d12555be3599e1fe77c87a01e058b886741d99f24"
+      "sha256": "32012d05ab5e013799714ba4dcd9363a9f5e04c23513c2bbbb75af80b3b1b352",
+      "gradient_light": "#315E3B",
+      "gradient_dark": "#B8D382",
+      "gradient_light_secondary": "#A1B957",
+      "gradient_dark_secondary": "#D4B577",
+      "signature": true,
+      "gradient_surfaces_light": {
+        "app": "#F2F5E9",
+        "elevated": "#FCFDF5",
+        "subtle": "#EAF0DB",
+        "muted": "#DAE5C9",
+        "text": "#263C28",
+        "text_secondary": "#657A56",
+        "border": "#B7CAA6"
+      },
+      "gradient_surfaces_dark": {
+        "app": "#101A11",
+        "elevated": "#1A291B",
+        "subtle": "#243728",
+        "muted": "#304735",
+        "text": "#EBF0D5",
+        "text_secondary": "#BCCDA3",
+        "border": "#456148"
+      }
     },
     {
       "name": "sunset",
       "display_name": "落日",
-      "description": "橙粉暖色，更有生活感",
+      "description": "落日橙与霞光粉的斜向暖色过渡",
       "file": "sunset.css",
-      "sha256": "59e12d9e3658c8e15228110792a1db7f16316fb028ceb44fc121d007601af746"
+      "sha256": "2f80df21ff57bfe32e616095c86032a50c5cc113fd407764b8f0a7abb13b16eb",
+      "gradient_light": "#BD493F",
+      "gradient_dark": "#FCAD6C",
+      "gradient_light_secondary": "#DF7BA3",
+      "gradient_dark_secondary": "#F49DD2",
+      "signature": true,
+      "gradient_surfaces_light": {
+        "app": "#FFF1E8",
+        "elevated": "#FFF8F2",
+        "subtle": "#FFE0D8",
+        "muted": "#FAD0D1",
+        "text": "#572C39",
+        "text_secondary": "#925D60",
+        "border": "#EDB5AB"
+      },
+      "gradient_surfaces_dark": {
+        "app": "#25111F",
+        "elevated": "#341A29",
+        "subtle": "#42243A",
+        "muted": "#583348",
+        "text": "#FFE6DA",
+        "text_secondary": "#E9A7A7",
+        "border": "#71435B"
+      }
     },
     {
       "name": "nord",
       "display_name": "北境",
-      "description": "低饱和蓝灰，克制安静",
+      "description": "雪蓝、冰灰和低饱和极简界面",
       "file": "nord.css",
-      "sha256": "8853b76b5345f75470e31f44deea4d989daea79ce6606b8743e852ad4506bc01"
+      "sha256": "2b98ea44145536d24606a1166fb79989e75440a3ea5aabc931cb4d8a98694b03",
+      "gradient_light": "#47687D",
+      "gradient_dark": "#A6CCD9",
+      "gradient_light_secondary": "#9DC7D6",
+      "gradient_dark_secondary": "#D1E9EC",
+      "signature": true,
+      "gradient_surfaces_light": {
+        "app": "#EAF0F4",
+        "elevated": "#FBFDFE",
+        "subtle": "#E2EAEF",
+        "muted": "#D3DFE7",
+        "text": "#263F54",
+        "text_secondary": "#5D7889",
+        "border": "#BDD0DD"
+      },
+      "gradient_surfaces_dark": {
+        "app": "#121C27",
+        "elevated": "#1C2A36",
+        "subtle": "#263846",
+        "muted": "#314858",
+        "text": "#E6F0F5",
+        "text_secondary": "#ADC4D1",
+        "border": "#496071"
+      }
     },
     {
       "name": "mint",
       "display_name": "薄荷",
       "description": "清透青绿，轻盈舒缓",
       "file": "mint.css",
-      "sha256": "d884dee47bcfcb1c63f2d72f550ac47f5593cec61d1670571e2752faabb8cef8"
+      "sha256": "d884dee47bcfcb1c63f2d72f550ac47f5593cec61d1670571e2752faabb8cef8",
+      "gradient_light": "#0d9488",
+      "gradient_dark": "#5eead4"
     },
     {
       "name": "rose",
       "display_name": "蔷薇",
       "description": "柔和玫红，明快但不过分甜腻",
       "file": "rose.css",
-      "sha256": "3d2c263885939bc3d8f16ed72d0892ecb30cbe352902af0ca8cdd0b53c961cf4"
+      "sha256": "3d2c263885939bc3d8f16ed72d0892ecb30cbe352902af0ca8cdd0b53c961cf4",
+      "gradient_light": "#db2777",
+      "gradient_dark": "#f472b6"
     },
     {
       "name": "amber",
       "display_name": "琥珀",
       "description": "金黄暖色，适合工具与生活类应用",
       "file": "amber.css",
-      "sha256": "b1f028cca60299633a6d12c909116f4b77fd0483f146ab4fe6273c35292dab3f"
+      "sha256": "b1f028cca60299633a6d12c909116f4b77fd0483f146ab4fe6273c35292dab3f",
+      "gradient_light": "#d97706",
+      "gradient_dark": "#fbbf24"
     },
     {
       "name": "graphite",
       "display_name": "石墨",
-      "description": "中性灰阶与紧凑圆角，偏专业工具感",
+      "description": "黑白中性灰阶、硬朗小圆角与扁平层次",
       "file": "graphite.css",
-      "sha256": "fdda91d7d2bfc9ccf27604c58c33b9974f4171c73ee1c81e859673683fb06b3b"
+      "sha256": "bfe9ea1e862a8c6ebe0a784b2f30efba0206238de20ef5eb8a0bf2e30d577a63",
+      "gradient_light": "#343E4A",
+      "gradient_dark": "#C4CDD7",
+      "gradient_light_secondary": "#99A3AE",
+      "gradient_dark_secondary": "#8694A4",
+      "signature": true,
+      "gradient_surfaces_light": {
+        "app": "#F1F3F5",
+        "elevated": "#FCFCFD",
+        "subtle": "#E8EBEE",
+        "muted": "#DADEE3",
+        "text": "#242C34",
+        "text_secondary": "#68727D",
+        "border": "#C6CBD1"
+      },
+      "gradient_surfaces_dark": {
+        "app": "#0E1115",
+        "elevated": "#171C22",
+        "subtle": "#202832",
+        "muted": "#303A46",
+        "text": "#EBEFF2",
+        "text_secondary": "#A5B1BC",
+        "border": "#44505E"
+      }
     },
     {
       "name": "mocha",
       "display_name": "摩卡",
       "description": "咖啡棕与暖米色，沉稳柔和",
       "file": "mocha.css",
-      "sha256": "2ed48328a5f5e41f6af106140b33547a1a2c91b86e77abd78f64f7418cff65a8"
+      "sha256": "2ed48328a5f5e41f6af106140b33547a1a2c91b86e77abd78f64f7418cff65a8",
+      "gradient_light": "#9a5b3d",
+      "gradient_dark": "#d9a17f"
     },
     {
       "name": "lavender",
       "display_name": "薰衣草",
-      "description": "浅紫柔和，并使用更圆润的界面轮廓",
+      "description": "奶油薰衣草紫、柔和光晕与大圆角",
       "file": "lavender.css",
-      "sha256": "1fb54de803e78728a8979ef27796f56f8421657d46ddb1e219f30d9701d90833"
+      "sha256": "45deac594d46db781a7fd46afb1dacd80ceed4fee88d9be74b8aa29dbd8b74ff",
+      "gradient_light": "#7550AE",
+      "gradient_dark": "#D5B3F6",
+      "gradient_light_secondary": "#C4A5E8",
+      "gradient_dark_secondary": "#9B78C9",
+      "signature": true,
+      "gradient_surfaces_light": {
+        "app": "#FAF6FF",
+        "elevated": "#FFFDFF",
+        "subtle": "#F4EAFC",
+        "muted": "#E9D9F7",
+        "text": "#402F5E",
+        "text_secondary": "#785D95",
+        "border": "#DAC5EC"
+      },
+      "gradient_surfaces_dark": {
+        "app": "#1B1228",
+        "elevated": "#291C3A",
+        "subtle": "#352448",
+        "muted": "#473258",
+        "text": "#F5ECFF",
+        "text_secondary": "#BEA7D6",
+        "border": "#5A4671"
+      }
     },
     {
       "name": "midnight",
       "display_name": "午夜",
-      "description": "深蓝靛色，高对比且偏开发工具风格",
+      "description": "午夜靛蓝、深海军蓝和克制的工具界面",
       "file": "midnight.css",
-      "sha256": "b55c79229d9b896ac2b30959afd32124cc4fb06758d0e87b26288cda2df7d9da"
+      "sha256": "b09e690695586ffd2c43ccc6047d581d5ad23528f68129ab4a17638467c32191",
+      "gradient_light": "#224787",
+      "gradient_dark": "#8AB9FF",
+      "gradient_light_secondary": "#7C99CE",
+      "gradient_dark_secondary": "#436BAF",
+      "signature": true,
+      "gradient_surfaces_light": {
+        "app": "#EDF2FB",
+        "elevated": "#FEFFFF",
+        "subtle": "#E0E9F8",
+        "muted": "#CADAF0",
+        "text": "#182E54",
+        "text_secondary": "#596E91",
+        "border": "#B1C4E2"
+      },
+      "gradient_surfaces_dark": {
+        "app": "#050A18",
+        "elevated": "#0B1325",
+        "subtle": "#121D34",
+        "muted": "#1C2B48",
+        "text": "#E5EDFF",
+        "text_secondary": "#9DB6D8",
+        "border": "#2D4467"
+      }
     },
     {
       "name": "cobalt",
       "display_name": "钴蓝",
       "description": "清晰强烈的蓝色工具风格",
       "file": "cobalt.css",
-      "sha256": "925e362fd54123253310522dfb55ba0cdbd6d82a0e055d0dcff30f5e9f95d5de"
+      "sha256": "925e362fd54123253310522dfb55ba0cdbd6d82a0e055d0dcff30f5e9f95d5de",
+      "gradient_light": "#2457d6",
+      "gradient_dark": "#6f98ff"
     },
     {
       "name": "jade",
       "display_name": "翡翠",
-      "description": "偏沉稳的玉石绿，圆润但不轻浮",
+      "description": "矿物翡翠绿、温润玉色和玻璃质感",
       "file": "jade.css",
-      "sha256": "88c1a3e5495bef7e03f02f17f9f32d8caa1da5203d10f0d24bb3ee51954aca95"
+      "sha256": "8784932a273691876c30300a11fd0b45debe0031beef3dc67b5c1a60b9f19550",
+      "gradient_light": "#146A56",
+      "gradient_dark": "#8BD6BF",
+      "gradient_light_secondary": "#89C5AA",
+      "gradient_dark_secondary": "#4E9D82",
+      "signature": true,
+      "gradient_surfaces_light": {
+        "app": "#EDF7F2",
+        "elevated": "#FCFFFC",
+        "subtle": "#E3F1E9",
+        "muted": "#D2E6DB",
+        "text": "#153E32",
+        "text_secondary": "#507E6C",
+        "border": "#B2D5C5"
+      },
+      "gradient_surfaces_dark": {
+        "app": "#091D19",
+        "elevated": "#122D26",
+        "subtle": "#1E3A30",
+        "muted": "#294A3C",
+        "text": "#E1F6ED",
+        "text_secondary": "#9FCBBB",
+        "border": "#3C6555"
+      }
     },
     {
       "name": "cherry",
       "display_name": "樱桃",
-      "description": "鲜明红粉，保持克制的层级对比",
+      "description": "酒红、樱桃红和浓郁莓果层次",
       "file": "cherry.css",
-      "sha256": "2d6753b0c421b731eb70de03bb716d156f8756408366637d41b2575c71c32ab6"
+      "sha256": "8e729f0dd2dce50e5dd226d05489a7c790c4200c25427fdfbd9ec4b6738c38ac",
+      "gradient_light": "#AC2844",
+      "gradient_dark": "#FC708B",
+      "gradient_light_secondary": "#E9788D",
+      "gradient_dark_secondary": "#D63368",
+      "signature": true,
+      "gradient_surfaces_light": {
+        "app": "#FFF5F4",
+        "elevated": "#FFFDFB",
+        "subtle": "#FCE7E8",
+        "muted": "#F5CDD2",
+        "text": "#4A1D29",
+        "text_secondary": "#92515E",
+        "border": "#E5B1B9"
+      },
+      "gradient_surfaces_dark": {
+        "app": "#230C1A",
+        "elevated": "#301121",
+        "subtle": "#411A2C",
+        "muted": "#55233C",
+        "text": "#FFE7EC",
+        "text_secondary": "#EAB0BE",
+        "border": "#74354D"
+      }
     },
     {
       "name": "sand",
       "display_name": "沙丘",
       "description": "米沙与棕褐色，低对比暖色工具感",
       "file": "sand.css",
-      "sha256": "523f3cab234228ab4613c5f42565d747095f63215ea90d95696831c8cb1221e7"
+      "sha256": "523f3cab234228ab4613c5f42565d747095f63215ea90d95696831c8cb1221e7",
+      "gradient_light": "#a26735",
+      "gradient_dark": "#d8a36f"
     },
     {
       "name": "plum",
       "display_name": "梅紫",
       "description": "成熟紫红色，适合偏内容型桌面应用",
       "file": "plum.css",
-      "sha256": "54262931d61d1662979af5bde8f24e39f7230c816cbb8c6fb19e586f2467fb84"
+      "sha256": "54262931d61d1662979af5bde8f24e39f7230c816cbb8c6fb19e586f2467fb84",
+      "gradient_light": "#8f3f91",
+      "gradient_dark": "#d38ad6"
     },
     {
       "name": "ice",
       "display_name": "冰川",
       "description": "冰蓝灰背景与清冷青色强调",
       "file": "ice.css",
-      "sha256": "e998982f14b57a2a977baf203a6f439184e9e0aa74e5efb65d37ca13efb5bd9b"
+      "sha256": "e998982f14b57a2a977baf203a6f439184e9e0aa74e5efb65d37ca13efb5bd9b",
+      "gradient_light": "#1687a6",
+      "gradient_dark": "#67d4ee"
     },
     {
       "name": "terminal",
       "display_name": "终端",
       "description": "低圆角绿色系，突出日志与开发工具气质",
       "file": "terminal.css",
-      "sha256": "5e0e6a47631fdf01651c3b540730de26330eb8026a9439641b9058b516fa72e7"
+      "sha256": "5e0e6a47631fdf01651c3b540730de26330eb8026a9439641b9058b516fa72e7",
+      "gradient_light": "#2b7d46",
+      "gradient_dark": "#63d982"
     },
     {
       "name": "cyber",
       "display_name": "赛博",
-      "description": "紫色主调配青色强调，暗色模式更鲜明",
+      "description": "深紫电子夜景、电光青与锐利高对比",
       "file": "cyber.css",
-      "sha256": "31f75935296f870c350af461f9fccf239bea652c40534d889c0038f0fd49ea95"
+      "sha256": "5d4384bb8c994408513023f64742fade8876b4c7fd7ce798d7b9bbca89b41940",
+      "gradient_light": "#5040BD",
+      "gradient_dark": "#B78BFF",
+      "gradient_light_secondary": "#07ABBA",
+      "gradient_dark_secondary": "#47EDD5",
+      "signature": true,
+      "gradient_surfaces_light": {
+        "app": "#F1F1FF",
+        "elevated": "#FCFCFF",
+        "subtle": "#E8E7FF",
+        "muted": "#D9D5FD",
+        "text": "#24245A",
+        "text_secondary": "#5658A4",
+        "border": "#B8B5EE"
+      },
+      "gradient_surfaces_dark": {
+        "app": "#070514",
+        "elevated": "#100B26",
+        "subtle": "#1D143B",
+        "muted": "#302052",
+        "text": "#F4ECFF",
+        "text_secondary": "#C5B1E9",
+        "border": "#4B3580"
+      }
     },
     {
       "name": "sage",
       "display_name": "鼠尾草",
       "description": "低饱和草木绿，柔和安静",
       "file": "sage.css",
-      "sha256": "d39e2936db290684561caaa0466c7b44376ae8ee2051eaaa72575aa91cf7a221"
+      "sha256": "d39e2936db290684561caaa0466c7b44376ae8ee2051eaaa72575aa91cf7a221",
+      "gradient_light": "#6f875f",
+      "gradient_dark": "#a5bd91"
     },
     {
       "name": "peach",
       "display_name": "蜜桃",
       "description": "柔软珊瑚橙与更圆润的界面轮廓",
       "file": "peach.css",
-      "sha256": "98d70eda37bb01889b3f7f00352c6ffcce1af443a9efeefc63a061c3700248f9"
+      "sha256": "98d70eda37bb01889b3f7f00352c6ffcce1af443a9efeefc63a061c3700248f9",
+      "gradient_light": "#e56f51",
+      "gradient_dark": "#ff9b7f"
     },
     {
       "name": "denim",
       "display_name": "丹宁",
       "description": "低饱和牛仔蓝，偏沉稳工具风格",
       "file": "denim.css",
-      "sha256": "b3f598bef1029938cf8290b0d3dc277c5a955d75e673371efbc72fb4f7b01892"
+      "sha256": "b3f598bef1029938cf8290b0d3dc277c5a955d75e673371efbc72fb4f7b01892",
+      "gradient_light": "#47779e",
+      "gradient_dark": "#78a9cf"
     },
     {
       "name": "orchid",
       "display_name": "兰花",
       "description": "紫粉色调，适合内容与创作类应用",
       "file": "orchid.css",
-      "sha256": "438babb973be4103af5d09f78ae8948e46fe6241ac255dddb303a25f93af53df"
+      "sha256": "438babb973be4103af5d09f78ae8948e46fe6241ac255dddb303a25f93af53df",
+      "gradient_light": "#b14eaa",
+      "gradient_dark": "#e58cde"
     },
     {
       "name": "paper",
       "display_name": "纸张",
-      "description": "暖白纸张感、低阴影与紧凑圆角",
+      "description": "羊皮纸、深褐墨色和扁平印刷质感",
       "file": "paper.css",
-      "sha256": "06ae80aab1c093cce74256663c531a9312e7a0d3eabe614297e48f9b4f71c57f"
+      "sha256": "f0f2b52a21021ee3c1c5d569b4ead8879a1a13b8e378a3f70e06c4fd2cea5e07",
+      "gradient_light": "#65513F",
+      "gradient_dark": "#DDC6A2",
+      "gradient_light_secondary": "#B09C77",
+      "gradient_dark_secondary": "#937F62",
+      "signature": true,
+      "gradient_surfaces_light": {
+        "app": "#F5F0E5",
+        "elevated": "#FEF9EE",
+        "subtle": "#EAE3D4",
+        "muted": "#DDD1BB",
+        "text": "#3E3429",
+        "text_secondary": "#75654F",
+        "border": "#CBBCA4"
+      },
+      "gradient_surfaces_dark": {
+        "app": "#1A1713",
+        "elevated": "#262118",
+        "subtle": "#30291F",
+        "muted": "#403728",
+        "text": "#F0E3D0",
+        "text_secondary": "#BEAD96",
+        "border": "#594B3A"
+      }
     },
     {
       "name": "obsidian",
       "display_name": "黑曜石",
       "description": "近黑暗色与冷蓝强调，突出高对比工具感",
       "file": "obsidian.css",
-      "sha256": "3081624a09f790e88ac6ec98e57f725bed4b9a09486e05554ef143261106bbcd"
+      "sha256": "3081624a09f790e88ac6ec98e57f725bed4b9a09486e05554ef143261106bbcd",
+      "gradient_light": "#30363d",
+      "gradient_dark": "#58a6ff"
     },
     {
       "name": "neon",
       "display_name": "霓虹",
       "description": "暗色模式使用紫青高亮与更强对比",
       "file": "neon.css",
-      "sha256": "3cf0b90648365d83e0e3b885d135905179ed545c55399afc449dd820b5cc9798"
+      "sha256": "3cf0b90648365d83e0e3b885d135905179ed545c55399afc449dd820b5cc9798",
+      "gradient_light": "#6847e8",
+      "gradient_dark": "#a98bff"
     },
     {
       "name": "retro",
       "display_name": "复古",
-      "description": "陶土橙配青绿强调，带复古工具气质",
+      "description": "复古奶油黄、砖红与青绿色撞色",
       "file": "retro.css",
-      "sha256": "825fae579775ae81d5b8aa355cc108f8ca972572c7c0187a45e4db12491b924a"
+      "sha256": "077c90d072865fbb1d1380d86f0f5e11d014d765906fdc0f6ee5355b56e477a4",
+      "gradient_light": "#A44538",
+      "gradient_dark": "#F1A278",
+      "gradient_light_secondary": "#3B8680",
+      "gradient_dark_secondary": "#7EC3AE",
+      "signature": true,
+      "gradient_surfaces_light": {
+        "app": "#F8ECD5",
+        "elevated": "#FFF4E1",
+        "subtle": "#EFDCC1",
+        "muted": "#E3CAAD",
+        "text": "#422F2A",
+        "text_secondary": "#836657",
+        "border": "#C8A98B"
+      },
+      "gradient_surfaces_dark": {
+        "app": "#211A16",
+        "elevated": "#32241D",
+        "subtle": "#403027",
+        "muted": "#523B2F",
+        "text": "#FFF0D9",
+        "text_secondary": "#E1B79C",
+        "border": "#765442"
+      }
     }
   ]
 }
