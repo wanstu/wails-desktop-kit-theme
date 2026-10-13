@@ -17,7 +17,7 @@ desktopKitTheme.apply("dark");
 desktopKitTheme.clearGradient(); // 恢复纯色
 ```
 
-渐变依赖 Wails Desktop Kit `v0.12.0-rc.1` 或更新的兼容版本，旧 Kit 不具备 `applyGradient` 运行时 API。Theme Gallery 左侧默认展示 16 套精选主题，切换「全部」仍可访问 31 套主题。主区域「同屏对比」提供 16 套的浅色/深色界面缩略图。
+渐变依赖 Wails Desktop Kit `v0.12.0` 或更新的兼容版本，旧 Kit 不具备 `applyGradient` 运行时 API。Theme Gallery 左侧默认展示 16 套精选主题，切换「全部」仍可访问 31 套主题。主区域「同屏对比」提供 16 套的浅色/深色界面缩略图。
 
 
 
@@ -33,7 +33,7 @@ Theme 不重新定义 `.dk-button`、`.dk-panel`、`.dk-nav-link` 等组件，�
 
 ## 要求
 
-纯色 Theme Pack 的基础接口需要 Wails Desktop Kit **v0.3.0+**。**组合渐变和本版本 Theme Gallery 需要 v0.12.0-rc.1+**，因为新增 `desktopKitTheme.applyGradient()` 等 API。基础接口包括：
+纯色 Theme Pack 的基础接口需要 Wails Desktop Kit **v0.3.0+**。**组合渐变和本版本 Theme Gallery 需要 v0.12.0+**，因为新增 `desktopKitTheme.applyGradient()` 等 API。基础接口包括：
 
 - `data-dk-theme-pack`
 - `desktopKitTheme.setPack()`
@@ -43,8 +43,8 @@ Theme 不重新定义 `.dk-button`、`.dk-panel`、`.dk-nav-link` 等组件，�
 ## 安装
 
 ~~~powershell
-go get github.com/wanstu/wails-desktop-kit@v0.12.0-rc.1
-go get github.com/wanstu/wails-desktop-kit-theme@v0.4.0-rc.1
+go get github.com/wanstu/wails-desktop-kit@v0.12.0
+go get github.com/wanstu/wails-desktop-kit-theme@v0.4.0
 ~~~
 
 ## 挂载

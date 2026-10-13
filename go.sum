@@ -14,6 +14,8 @@ github.com/wanstu/wails-desktop-kit v0.3.0 h1:7p4OWPe3RUF2QHHsYHbhduju+hnLwnAaBY
 github.com/wanstu/wails-desktop-kit v0.3.0/go.mod h1:qJVMsGjyzQC5UHpaQa15wwM90oVs5odcO94QzcFeJnk=
 github.com/wanstu/wails-desktop-kit v0.12.0-rc.1 h1:LDRSoH9VFdeJ4scyeXrrdYnAdfNAM29l8eU/BaOm6Rc=
 github.com/wanstu/wails-desktop-kit v0.12.0-rc.1/go.mod h1:3PHy0sjNqcLwurVZfihR+31U84ZIp7EfDsgYiPbyPaQ=
+github.com/wanstu/wails-desktop-kit v0.12.0 h1:rNqwwcx2ypfJ5W1KMXEOMSo32OFLox5CgvghCqKofdQ=
+github.com/wanstu/wails-desktop-kit v0.12.0/go.mod h1:3PHy0sjNqcLwurVZfihR+31U84ZIp7EfDsgYiPbyPaQ=
 golang.org/x/net v0.56.0 h1:Rw8j/hFzGvJUZwNBXnAtf5sVDVt+65SK2C7IxCxZt5o=
 golang.org/x/net v0.56.0/go.mod h1:D3Ku6r+V6JROoZK144D2XfMHFcMq/0zSfLelVTCFKec=
 golang.org/x/sys v0.47.0 h1:o7XGOvZQCADBQQ4Y7VNq2dRWQR7JmOUW8Kxx4ZsNgWs=
