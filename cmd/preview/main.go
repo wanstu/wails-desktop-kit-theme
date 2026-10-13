@@ -15,12 +15,15 @@ import (
 var previewFS embed.FS
 
 type packView struct {
-	Name           string `json:"name"`
-	DisplayName    string `json:"displayName"`
-	Description    string `json:"description"`
-	StylesheetPath string `json:"stylesheetPath"`
-	GradientLight  string `json:"gradientLight"`
-	GradientDark   string `json:"gradientDark"`
+	Name                   string `json:"name"`
+	DisplayName            string `json:"displayName"`
+	Description            string `json:"description"`
+	StylesheetPath         string `json:"stylesheetPath"`
+	GradientLight          string `json:"gradientLight"`
+	GradientDark           string `json:"gradientDark"`
+	GradientLightSecondary string `json:"gradientLightSecondary,omitempty"`
+	GradientDarkSecondary  string `json:"gradientDarkSecondary,omitempty"`
+	Signature              bool   `json:"signature"`
 }
 
 func main() {
@@ -48,12 +51,15 @@ func main() {
 		for _, pack := range packs {
 			path, _ := theme.StylesheetPath(pack.Name)
 			result = append(result, packView{
-				Name:           pack.Name,
-				DisplayName:    pack.DisplayName,
-				Description:    pack.Description,
-				StylesheetPath: path,
-				GradientLight:  colors[pack.Name].GradientLight,
-				GradientDark:   colors[pack.Name].GradientDark,
+				Name:                   pack.Name,
+				DisplayName:            pack.DisplayName,
+				Description:            pack.Description,
+				StylesheetPath:         path,
+				GradientLight:          colors[pack.Name].GradientLight,
+				GradientDark:           colors[pack.Name].GradientDark,
+				GradientLightSecondary: colors[pack.Name].GradientLightSecondary,
+				GradientDarkSecondary:  colors[pack.Name].GradientDarkSecondary,
+				Signature:              pack.Signature,
 			})
 		}
 		w.Header().Set("Content-Type", "application/json; charset=utf-8")

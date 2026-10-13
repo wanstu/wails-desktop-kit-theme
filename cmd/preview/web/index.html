@@ -57,6 +57,10 @@
         </div>
         <small id="gradient-message" aria-live="polite">点击下方主题加入组合。</small>
       </div>
+      <div class="preview-visibility" role="group" aria-label="主题范围">
+        <button id="show-signature" type="button" class="is-active">精选 16</button>
+        <button id="show-all" type="button">全部 31</button>
+      </div>
       <div id="theme-picker" class="preview-theme-picker" role="listbox" aria-label="选择主题"></div>
 
       <div class="preview-sidebar-footer">
@@ -82,6 +86,12 @@
         <div class="preview-swatch" style="--swatch: var(--dk-warning)"><span>Warning</span></div>
         <div class="preview-swatch" style="--swatch: var(--dk-danger)"><span>Danger</span></div>
       </section>
+
+      <details id="compare" class="preview-compare">
+        <summary>同屏对比 · 16 套精选主题（浅色 / 深色）</summary>
+        <p>每套主题使用相同卡片、按钮和导航进行对比。点击任意主题可切换到完整预览。</p>
+        <div id="theme-compare-grid" class="preview-compare-grid"></div>
+      </details>
 
       <div class="preview-grid">
         <section id="components" class="dk-panel preview-span-2">

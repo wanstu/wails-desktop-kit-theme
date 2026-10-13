@@ -12,6 +12,9 @@
   const builder = document.getElementById("gradient-builder");
   const gradientOrder = document.getElementById("gradient-order");
   const gradientMessage = document.getElementById("gradient-message");
+  const showSignature = document.getElementById("show-signature");
+  const showAll = document.getElementById("show-all");
+  const compareGrid = document.getElementById("theme-compare-grid");
   const loadedStyles = new Set();
   const paletteCache = new Map();
 
@@ -21,6 +24,7 @@
   let themeStyle = "solid";
   let gradientSelection = ["aurora", "sakura"];
   let gradientRequest = 0;
+  let signatureOnly = true;
 
   function ensurePackStylesheet(pack) {
     if (loadedStyles.has(pack.name)) return;
@@ -133,7 +137,9 @@
 
   function updatePackButtons() {
     Array.from(themePicker.children).forEach((button, index) => {
-      const order = gradientSelection.indexOf(packs[index].name);
+      const pack = packs[index];
+      const order = gradientSelection.indexOf(pack.name);
+      button.hidden = signatureOnly && !pack.signature && !(themeStyle === "gradient" && order >= 0);
       const active = themeStyle === "gradient" ? order >= 0 : index === activePackIndex;
       button.classList.toggle("is-active", themeStyle === "solid" && active);
       button.classList.toggle("is-gradient-selected", themeStyle === "gradient" && active);
@@ -141,6 +147,99 @@
       button.setAttribute("aria-selected", String(active));
       button.tabIndex = 0;
     });
+  }
+
+
+  function visiblePackIndices() {
+    return packs.flatMap((pack, index) => signatureOnly && !pack.signature ? [] : [index]);
+  }
+
+  function navigatePack(direction, focus = false) {
+    const visible = visiblePackIndices();
+    if (!visible.length) return;
+    const index = visible.indexOf(activePackIndex);
+    selectPackByIndex(visible[(index + direction + visible.length) % visible.length], focus);
+  }
+
+  function setVisibility(onlySignature) {
+    signatureOnly = onlySignature;
+    showSignature.classList.toggle("is-active", signatureOnly);
+    showAll.classList.toggle("is-active", !signatureOnly);
+    showSignature.setAttribute("aria-pressed", String(signatureOnly));
+    showAll.setAttribute("aria-pressed", String(!signatureOnly));
+    localStorage.setItem("dk-preview-signature-only", String(signatureOnly));
+    if (themeStyle === "solid" && signatureOnly && !packs[activePackIndex].signature) {
+      selectPackByIndex(visiblePackIndices()[0]);
+    }
+    updatePackButtons();
+    if (themeStyle === "solid") {
+      const visible = visiblePackIndices();
+      packPosition.textContent = (visible.indexOf(activePackIndex) + 1) + " / " + visible.length;
+    }
+  }
+
+  function mockupForTheme(palette, mode) {
+    const mock = document.createElement("div");
+    mock.className = "preview-compare-mock";
+    const vars = {
+      "bg": "--dk-bg-app", "text": "--dk-text", "subtle": "--dk-bg-subtle",
+      "muted": "--dk-bg-muted", "elevated": "--dk-bg-elevated",
+      "border": "--dk-border", "primary": "--dk-primary",
+      "background": "--dk-app-gradient", "sidebar-gradient": "--dk-sidebar-gradient",
+      "panel-gradient": "--dk-panel-gradient", "primary-gradient": "--dk-primary-gradient",
+      "radius": "--dk-radius-lg", "small-radius": "--dk-radius-sm",
+      "shadow": "--dk-shadow-panel"
+    };
+    Object.entries(vars).forEach(([name, token]) => {
+      const value = palette[token];
+      if (value) mock.style.setProperty("--mini-" + name, value);
+    });
+    const modeLabel = document.createElement("small");
+    modeLabel.textContent = mode === "dark" ? "DARK" : "LIGHT";
+    const content = document.createElement("div");
+    content.className = "preview-compare-mock-content";
+    const sidebar = document.createElement("div");
+    sidebar.className = "preview-compare-mock-sidebar";
+    const panel = document.createElement("div");
+    panel.className = "preview-compare-mock-panel";
+    ["preview-compare-mock-line", "preview-compare-mock-line short", "preview-compare-mock-action"]
+      .forEach((name) => {
+        const shape = document.createElement("div");
+        shape.className = name;
+        panel.appendChild(shape);
+      });
+    content.append(sidebar, panel);
+    mock.append(modeLabel, content);
+    return mock;
+  }
+
+  async function renderComparisons() {
+    const signatures = packs.filter((pack) => pack.signature);
+    const cards = await Promise.all(signatures.map(async (pack) => {
+      const palette = await loadPackPalette(pack);
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "preview-compare-card";
+      const title = document.createElement("div");
+      title.className = "preview-compare-card-header";
+      const heading = document.createElement("strong");
+      heading.textContent = pack.displayName;
+      const subtitle = document.createElement("small");
+      subtitle.textContent = pack.name;
+      title.append(heading, subtitle);
+      const mockups = document.createElement("div");
+      mockups.className = "preview-compare-modes";
+      mockups.append(mockupForTheme(palette.light, "light"), mockupForTheme(palette.dark, "dark"));
+      button.append(title, mockups);
+      button.title = pack.description;
+      button.addEventListener("click", () => {
+        if (themeStyle !== "solid") setStyle("solid");
+        selectPackByIndex(packs.indexOf(pack));
+        document.getElementById("overview").scrollIntoView({ behavior: "smooth" });
+      });
+      return button;
+    }));
+    compareGrid.replaceChildren(...cards);
   }
 
   function selectPackByIndex(index, focusButton = false) {
@@ -153,7 +252,8 @@
     desktopKitTheme.setPack(pack.name);
     packDescription.textContent = pack.description;
     packSummary.textContent = pack.displayName + " · " + pack.name;
-    packPosition.textContent = (activePackIndex + 1) + " / " + packs.length;
+    const visible = visiblePackIndices();
+    packPosition.textContent = (visible.indexOf(activePackIndex) + 1) + " / " + visible.length;
     localStorage.setItem("dk-preview-pack", pack.name);
 
     updatePackButtons();
@@ -318,13 +418,19 @@
     const savedPack = localStorage.getItem("dk-preview-pack");
     const savedPackIndex = packs.findIndex((pack) => pack.name === savedPack);
     selectPackByIndex(savedPackIndex >= 0 ? savedPackIndex : 0);
+    signatureOnly = localStorage.getItem("dk-preview-signature-only") !== "false";
+    if (savedPackIndex >= 0 && !packs[savedPackIndex].signature) signatureOnly = false;
+    setVisibility(signatureOnly);
+    showSignature.addEventListener("click", () => setVisibility(true));
+    showAll.addEventListener("click", () => setVisibility(false));
+    renderComparisons().catch((error) => console.error("主题对比加载失败", error));
 
     const savedMode = localStorage.getItem("dk-preview-mode");
     const initialMode = ["light", "dark", "system"].includes(savedMode) ? savedMode : "light";
     selectMode(initialMode);
 
-    prevPackButton.addEventListener("click", () => selectPackByIndex(activePackIndex - 1, true));
-    nextPackButton.addEventListener("click", () => selectPackByIndex(activePackIndex + 1, true));
+    prevPackButton.addEventListener("click", () => navigatePack(-1, true));
+    nextPackButton.addEventListener("click", () => navigatePack(1, true));
 
     modeTabs.forEach((button) => {
       button.addEventListener("click", () => selectMode(button.dataset.mode));
@@ -352,10 +458,10 @@
 
       if (themeStyle === "solid" && event.key === "ArrowLeft") {
         event.preventDefault();
-        selectPackByIndex(activePackIndex - 1);
+        navigatePack(-1);
       } else if (themeStyle === "solid" && event.key === "ArrowRight") {
         event.preventDefault();
-        selectPackByIndex(activePackIndex + 1);
+        navigatePack(1);
       } else if (event.key.toLowerCase() === "l") {
         selectMode("light");
       } else if (event.key.toLowerCase() === "d") {
